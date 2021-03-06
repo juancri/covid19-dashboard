@@ -24,7 +24,7 @@ export default class DataLoader
 			deaths: DeathsDataLoader.load(dataWeeks),
 			newCases: NewCasesDataLoader.load(dataWeeks),
 			positivity: PositivityDataLoader.load(dataWeeks),
-			vaccination: VaccinationDataLoader.load()
+			vaccination: await VaccinationDataLoader.load()
 		};
 	}
 }
