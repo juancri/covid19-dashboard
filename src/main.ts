@@ -2,13 +2,16 @@
 import DataLoader from "./data/DataLoader";
 import TemplateManager from "./template/TemplateManager";
 
-try
+(async() =>
 {
-	const data = DataLoader.loadTree();
-	const svgPath = TemplateManager.write(data);
-	console.log(svgPath);
-}
-catch (e)
-{
-	console.log(e);
-}
+	try
+	{
+		const data = await DataLoader.loadTree();
+		const svgPath = TemplateManager.write(data);
+		console.log(svgPath);
+	}
+	catch (e)
+	{
+		console.log(e);
+	}
+})();
