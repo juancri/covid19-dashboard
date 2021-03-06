@@ -7,7 +7,7 @@ import CsvDownloader from "../util/CsvDownloader";
 
 const POPULATION = 19_212_361;
 const URL = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto76/vacunacion_std.csv';
-const FORMAT = formatNumber({ });
+const FORMAT = formatNumber({ integerSeparator: '.' });
 
 export default class VaccinationDataLoader
 {
