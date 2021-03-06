@@ -13,7 +13,7 @@ export default class BedsDataLoader
 		const lastUpdate = '';
 		const used = this.getNumber(last.ocupados);
 		const total = this.getNumber(last.total);
-		const usedPercentage = Math.floor((used / total) * 100);
+		const usedPercentage = Math.round((used / total) * 100);
 
 		return { available, lastUpdate, usedPercentage };
 	}
