@@ -5,41 +5,59 @@ import { DataHeaderData, DataWeek, DataWeeks } from "../Types";
 
 const DAY_FORMAT = 'dd/MM';
 const MONTHS = new Map<number, string>([
-	[2, 'febrero']
+	[1, 'enero'],
+	[2, 'febrero'],
+	[3, 'marzo'],
+	[4, 'abril'],
+	[5, 'mayo'],
+	[6, 'junio'],
+	[7, 'julio'],
+	[8, 'agosto'],
+	[9, 'septiembre'],
+	[10, 'octubre'],
+	[11, 'noviembre'],
+	[12, 'diciembre']
 ]);
 const WEEKDAYS = new Map<number, string>([
+	[1, 'lunes'],
+	[2, 'martes'],
+	[3, 'miércoles'],
+	[4, 'jueves'],
+	[5, 'viernes'],
+	[6, 'sábado'],
 	[7, 'domingo']
 ]);
-const TODAY = DateTime.local();
 
 export default class DateDataLoader
 {
-	public static loadDate(): DataHeaderData
+	public static loadDate(today: DateTime): DataHeaderData
 	{
 		return {
-			dayOfMonth: TODAY.day,
-			dayOfMonthIsShort: TODAY.day < 10,
-			dayOfWeek: WEEKDAYS.get(TODAY.weekday) || '',
-			month: MONTHS.get(TODAY.month) || ''
+			dayOfMonth: today.day,
+			dayOfMonthIsShort: today.day < 10,
+			dayOfWeek: WEEKDAYS.get(today.weekday) || '',
+			month: MONTHS.get(today.month) || ''
 		};
 	}
 
-	public static loadWeeks(): DataWeeks
+	public static loadWeeks(today: DateTime): DataWeeks
 	{
 		return {
-			first: DateDataLoader.loadWeek(1),
-			second: DateDataLoader.loadWeek(2),
-			third: DateDataLoader.loadWeek(3),
+			first: DateDataLoader.loadWeek(today, 1),
+			second: DateDataLoader.loadWeek(today, 2),
+			third: DateDataLoader.loadWeek(today, 3),
 		}
 	}
 
-	private static loadWeek(weekNumber: number): DataWeek
+	private static loadWeek(today: DateTime, weekNumber: number): DataWeek
 	{
-		const firstDay = TODAY.plus({ days: -7 * (4 - weekNumber) });
-		const lastDay = TODAY.plus({ days: -7 * (3 - weekNumber) });
+		const from = today.plus({ days: -7 * (4 - weekNumber) });
+		const to = today.plus({ days: -7 * (3 - weekNumber) });
 		return {
-			from: firstDay.toFormat(DAY_FORMAT),
-			to: lastDay.toFormat(DAY_FORMAT)
+			from,
+			to,
+			fromFormatted: from.toFormat(DAY_FORMAT),
+			toFormatted: to.toFormat(DAY_FORMAT)
 		}
 	}
 }

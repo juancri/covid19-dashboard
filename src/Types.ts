@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 
 export interface DataHeaderData
 {
@@ -15,8 +16,10 @@ export interface DataHeader
 
 export interface DataWeek
 {
-	from: string;
-	to: string;
+	from: DateTime;
+	to: DateTime;
+	fromFormatted: string;
+	toFormatted: string;
 }
 
 export interface DataWeeks
