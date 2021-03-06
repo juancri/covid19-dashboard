@@ -73,3 +73,5 @@ export interface DataTree
 	beds: DataBeds;
 	vaccination: DataVaccination
 }
+
+export type Row = { [key: string]: string | number };
