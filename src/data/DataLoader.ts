@@ -23,7 +23,7 @@ export default class DataLoader
 			beds: await BedsDataLoader.load(),
 			deaths: await DeathsDataLoader.load(dataWeeks),
 			newCases: await NewCasesDataLoader.load(dataWeeks),
-			positivity: PositivityDataLoader.load(dataWeeks),
+			positivity: await PositivityDataLoader.load(dataWeeks),
 			vaccination: await VaccinationDataLoader.load()
 		};
 	}
