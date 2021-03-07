@@ -24,12 +24,16 @@ export default class NewCasesDataLoader
 
 	private static getWeek(row: Row, week: DataWeek): DataWeeklyTrend
 	{
-		const previousWeek = this.getValue(row, week.from);
-		const currentWeek = this.getValue(row, week.to);
+		const value3 = this.getValue(row, week.to);
+		const value2 = this.getValue(row, week.from);
+		const value1 = this.getValue(row, week.from.plus({ days: -7 }));
+		const currentWeek = value3 - value2;
+		const previousWeek = value2 - value1;
+
 		return {
 			graph: '', // TODO: Implement
 			up: currentWeek > previousWeek,
-			value: currentWeek - previousWeek
+			value: currentWeek
 		};
 	}
 
