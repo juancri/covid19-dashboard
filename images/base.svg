@@ -89,6 +89,22 @@
 	.st42{fill:none;stroke:#CCCCCC;stroke-width:3.7658;stroke-miterlimit:10;}
 	.st43{fill:#4D4D4D;}
 	.st44{fill:none;stroke:#666666;stroke-width:3.7658;stroke-miterlimit:10;}
+	.rotateLeft {
+		transform-box: fill-box;
+		transform-origin: center;
+		transform: rotate(90deg);
+	}
+	.rotateRight {
+		transform-box: fill-box;
+		transform-origin: center;
+		transform: rotate(-90deg);
+	}
+   .blue {
+      fill: blue;
+   }
+   .orange {
+      fill: orange;
+   }
 </style>
 <g
    id="g6">
@@ -573,7 +589,6 @@
    <polygon
       class="st6"
       points="466.7,309.5 466.7,288.6 458.5,288.6 458.5,303.8 441.8,287 436.1,292.8 452.8,309.5 437.7,309.5   437.7,317.7 458.5,317.7 466.7,317.7 "
-      transform="rotate(-90, 451, 302)"
       id="polygon274" />
 {{else}}
    <polygon
@@ -591,7 +606,6 @@
    <polygon
       class="st6"
       points="223.4,289.9 202.5,289.9 202.5,298 217.6,298 200.9,314.8 206.6,320.5 223.4,303.8 223.4,318.9   231.5,318.9 231.5,298 231.5,289.9 "
-      transform="rotate(90, 215, 302)"
       id="polygon276" />
 {{/if}}
 
