@@ -22,7 +22,7 @@ export default class DataLoader
 			weeks: dataWeeks,
 			beds: await BedsDataLoader.load(),
 			deaths: DeathsDataLoader.load(dataWeeks),
-			newCases: NewCasesDataLoader.load(dataWeeks),
+			newCases: await NewCasesDataLoader.load(dataWeeks),
 			positivity: PositivityDataLoader.load(dataWeeks),
 			vaccination: await VaccinationDataLoader.load()
 		};
