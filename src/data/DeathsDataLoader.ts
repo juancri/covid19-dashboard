@@ -12,19 +12,19 @@ const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto5/TotalesNacionales.csv';
 const BOX_1: Box = {
-	left: 143,
-	right: 370.5,
+	left: 142.1,
+	right: 378.1,
 	top: 1266.3,
 	bottom: 1754.2
 };
 const BOX_2: Box = {
-	left: 370.5,
-	right: 605,
+	left: 378.1,
+	right: 612.5,
 	top: 1266.3,
 	bottom: 1754.2
 };
 const BOX_3: Box = {
-	left: 605,
+	left: 612.5,
 	right: 839.6,
 	top: 1266.3,
 	bottom: 1754.2
