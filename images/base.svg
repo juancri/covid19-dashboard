@@ -288,54 +288,81 @@
    transform="matrix(1 0 0 1 795.2953 943.4149)"
    class="st6 st7 st15"
    id="text86">{{ weeks.third.toFormatted }}</text>
-<text
-   transform="matrix(1 0 0 1 273.0515 280.415)"
-   class="st6 st7 st16"
-   id="text88">casos</text>
-<text
-   transform="matrix(1 0 0 1 508.0515 280.415)"
-   class="st6 st7 st16"
-   id="text90">casos</text>
 <g
    id="g96">
-	<path
-   class="st6"
-   d="M312,329.3h-61.4c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4H312c5.2,0,9.4,4.2,9.4,9.4v22   C321.5,325.1,317.3,329.3,312,329.3z"
-   id="path92" />
+   <text
+   x="260" y="280"
+   text-anchor="middle"
+   alignment-baseline="middle"
+   class="st6 st7 st16"
+   id="text90">casos</text>
+	<rect
+   style="fill:#808080"
+   id="rect1076"
+   width="140"
+   height="46"
+   x="190"
+   y="290"
+   rx="14"
+   ry="14" />
 	<text
-   transform="matrix(1 0 0 1 259.1067 318.3403)"
+   x="260" y="325"
+   text-anchor="middle"
+   alignment-baseline="middle"
    class="st0 st17 st18"
-   id="text94"><tspan
-     style="text-align:center;text-anchor:middle"
-     id="tspan1050">{{ newCases.week1.valueFormatted }}</tspan></text>
+
+   id="text94">{{ newCases.week1.valueFormatted }}</text>
 </g>
 <g
-   id="g102">
-	<path
-   class="st6"
-   d="M546.4,329.3H485c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4h61.4c5.2,0,9.4,4.2,9.4,9.4v22   C555.8,325.1,551.6,329.3,546.4,329.3z"
-   id="path98" />
-	<text
-   transform="matrix(1 0 0 1 493.4172 318.3403)"
-   class="st0 st17 st18"
-   id="text100"><tspan
-     style="text-align:center;text-anchor:middle"
-     id="tspan1052">{{ newCases.week2.valueFormatted }}</tspan></text>
-</g>
-<text
-   transform="matrix(1 0 0 1 740.0515 280.415)"
+   id="g96">
+   <text
+   x="500" y="280"
+   text-anchor="middle"
+   alignment-baseline="middle"
    class="st6 st7 st16"
-   id="text104">casos</text>
-<path
-   class="st19"
-   d="M781.9,338.8h-80.1c-5.2,0-9.4-4.2-9.4-9.4v-31.5c0-5.2,4.2-9.4,9.4-9.4h80.1c5.2,0,9.4,4.2,9.4,9.4v31.5  C791.4,334.6,787.1,338.8,781.9,338.8z"
-   id="path106" />
-<text
-   transform="matrix(1 0 0 1 711.9634 326.3403)"
-   class="st0 st17 st20"
-   id="text108"><tspan
-     style="text-align:center;text-anchor:middle"
-     id="tspan1054">{{ newCases.week3.valueFormatted }}</tspan></text>
+   id="text90">casos</text>
+	<rect
+   style="fill:#808080"
+   id="rect1076"
+   width="140"
+   height="46"
+   x="430"
+   y="290"
+   rx="14"
+   ry="14" />
+	<text
+   x="500" y="325"
+   text-anchor="middle"
+   alignment-baseline="middle"
+   class="st0 st17 st18"
+
+   id="text94">{{ newCases.week2.valueFormatted }}</text>
+</g>
+<g
+   id="g96">
+   <text
+   x="740" y="280"
+   text-anchor="middle"
+   alignment-baseline="middle"
+   class="st6 st7 st16"
+   id="text90">casos</text>
+	<rect
+   style="fill:#808080"
+   id="rect1076"
+   width="140"
+   height="46"
+   x="670"
+   y="290"
+   rx="14"
+   ry="14" />
+	<text
+   x="740" y="325"
+   text-anchor="middle"
+   alignment-baseline="middle"
+   class="st0 st17 st18"
+
+   id="text94">{{ newCases.week3.valueFormatted }}</text>
+</g>
 <text
    transform="translate(355.2807,1007.5854)"
    class="st21 st17 st22"
@@ -533,92 +560,6 @@
    cy="412.6"
    r="6.7"
    id="circle258" />
-<!--
-{{#if newCases.week3.up}}
-   <polygon
-      class="st19"
-      points="647.2,300.3 665.9,300.3 645.3,320.9 652.3,328 673,307.4 673,326 683,326 683,300.3 683,290.3 673,290.3 647.2,290.3 "
-      id="casesArrowDown3" />
-{{else}}
-   <polygon
-      class="st19"
-      points="647.2,300.3 665.9,300.3 645.3,320.9 652.3,328 673,307.4 673,326 683,326 683,300.3 683,290.3 673,290.3 647.2,290.3 "
-      id="casesArrowDown3"
-      transform="rotate(90,665.15,308.15)" />
-{{/if}}
--->
-<g
-   id="g268">
-	<path
-   class="st26"
-   d="M1763.9,1198.2h-80.1c-5.2,0-9.4-4.2-9.4-9.4v-31.5c0-5.2,4.2-9.4,9.4-9.4h80.1c5.2,0,9.4,4.2,9.4,9.4v31.5   C1773.4,1194,1769.1,1198.2,1763.9,1198.2z"
-   id="path262" />
-	<text
-   transform="matrix(1 0 0 1 1703.9639 1185.7402)"
-   class="st0 st17 st20"
-   id="text264">{{ positivity.week3.valueFormatted }}%</text>
-</g>
-<!--
-{{#if positivity.week3.up}}
-   <polygon
-      class="st26"
-      points="1629.2,1159.7 1647.9,1159.7 1627.3,1180.3 1634.3,1187.4 1655,1166.8 1655,1185.4 1665,1185.4 1665,1159.7 1665,1149.7 1655,1149.7 1629.2,1149.7 "
-      id="testsArrow3" />
-{{else}}
-   <polygon
-      class="st26"
-      points="1629.2,1159.7 1647.9,1159.7 1627.3,1180.3 1634.3,1187.4 1655,1166.8 1655,1185.4 1665,1185.4 1665,1159.7 1665,1149.7 1655,1149.7 1629.2,1149.7 "
-      id="testsArrow3" />
-{{/if}}
-{{#if positivity.week2.up}}
-   <polygon
-      class="st6"
-      points="1435.8,1148.7 1414.9,1148.7 1414.9,1156.9 1430.1,1156.9 1413.3,1173.6 1419,1179.4 1435.8,1162.6   1435.8,1177.7 1443.9,1177.7 1443.9,1156.9 1443.9,1148.7 "
-      id="testsArrow2" />
-{{else}}
-   <polygon
-      class="st6"
-      points="1435.8,1148.7 1414.9,1148.7 1414.9,1156.9 1430.1,1156.9 1413.3,1173.6 1419,1179.4 1435.8,1162.6   1435.8,1177.7 1443.9,1177.7 1443.9,1156.9 1443.9,1148.7 "
-      id="testsArrow2" />
-{{/if}}
-
-{{#if positivity.week1.up}}
-   <polygon
-      class="st6"
-      points="1199.6,1148.7 1178.7,1148.7 1178.7,1156.9 1193.8,1156.9 1177.1,1173.6 1182.8,1179.4 1199.6,1162.6   1199.6,1177.7 1207.7,1177.7 1207.7,1156.9 1207.7,1148.7 "
-      id="testsArrow1" />
-{{else}}
-   <polygon
-      class="st6"
-      points="1199.6,1148.7 1178.7,1148.7 1178.7,1156.9 1193.8,1156.9 1177.1,1173.6 1182.8,1179.4 1199.6,1162.6   1199.6,1177.7 1207.7,1177.7 1207.7,1156.9 1207.7,1148.7 "
-      id="testsArrow1" />
-{{/if}}
-
-{{#if newCases.week2.up}}
-   <polygon
-      class="st6"
-      points="466.7,309.5 466.7,288.6 458.5,288.6 458.5,303.8 441.8,287 436.1,292.8 452.8,309.5 437.7,309.5   437.7,317.7 458.5,317.7 466.7,317.7 "
-      id="polygon274" />
-{{else}}
-   <polygon
-      class="st6"
-      points="466.7,309.5 466.7,288.6 458.5,288.6 458.5,303.8 441.8,287 436.1,292.8 452.8,309.5 437.7,309.5   437.7,317.7 458.5,317.7 466.7,317.7 "
-      id="polygon274" />
-{{/if}}
-
-{{#if newCases.week1.up}}
-   <polygon
-      class="st6"
-      points="223.4,289.9 202.5,289.9 202.5,298 217.6,298 200.9,314.8 206.6,320.5 223.4,303.8 223.4,318.9   231.5,318.9 231.5,298 231.5,289.9 "
-      id="polygon276" />
-{{else}}
-   <polygon
-      class="st6"
-      points="223.4,289.9 202.5,289.9 202.5,298 217.6,298 200.9,314.8 206.6,320.5 223.4,303.8 223.4,318.9   231.5,318.9 231.5,298 231.5,289.9 "
-      id="polygon276" />
-{{/if}}
--->
-
 <text
    class="st32 st7 st8"
    id="text278"
@@ -729,40 +670,69 @@
      y="488"
      class="st6 st7 st14"
      id="tspan316">0%</tspan></text>
-<text
-   transform="matrix(1 0 0 1 1227.3108 1140.4169)"
-   class="st6 st7 st16"
-   id="text320">Positivos</text>
-<text
-   transform="matrix(1 0 0 1 1462.3107 1140.4169)"
-   class="st6 st7 st16"
-   id="text322">Positivos</text>
-<g
-   id="g328">
-	<path
-   class="st6"
-   d="M1292.1,1189.3h-61.4c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4h61.4c5.2,0,9.4,4.2,9.4,9.4v22   C1301.5,1185.1,1297.3,1189.3,1292.1,1189.3z"
-   id="path324" />
+<g>
+   <text
+      x="1235" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">positivos</text>
+	<rect
+      style="fill:#808080"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="1165"
+      y="1150"
+      rx="14"
+      ry="14" />
 	<text
-   transform="matrix(1 0 0 1 1244.6176 1178.3423)"
-   class="st0 st17 st18"
-   id="text326">{{ positivity.week1.valueFormatted }}%</text>
+      x="1235" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ positivity.week1.valueFormatted }}%</text>
 </g>
-<g
-   id="g334">
-	<path
-   class="st6"
-   d="M1526.5,1188.8h-61.4c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4h61.4c5.2,0,9.4,4.2,9.4,9.4v22   C1536,1184.6,1531.7,1188.8,1526.5,1188.8z"
-   id="path330" />
+<g>
+   <text
+      x="1475" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">positivos</text>
+	<rect
+      style="fill:#808080"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="1405"
+      y="1150"
+      rx="14"
+      ry="14" />
 	<text
-   transform="matrix(1 0 0 1 1471.42 1178.3423)"
-   class="st0 st17 st18"
-   id="text332">{{ positivity.week2.valueFormatted }}%</text>
+      x="1475" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ positivity.week2.valueFormatted }}%</text>
 </g>
-<text
-   transform="matrix(1 0 0 1 1700.3107 1140.4169)"
-   class="st6 st7 st16"
-   id="text336">Positivos</text>
+<g>
+   <text
+      x="1715" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">positivos</text>
+	<rect
+      style="fill:#808080"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="1645"
+      y="1150"
+      rx="14"
+      ry="14" />
+	<text
+      x="1715" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ positivity.week3.valueFormatted }}%</text>
+</g>
 <text
    transform="translate(1352.9371,1867.5874)"
    class="st21 st17 st22"
@@ -891,54 +861,6 @@
    r="6.7"
    id="circle394" />
 <g
-   id="g402">
-	<path
-   class="st26"
-   d="M793.4,1198.2h-80.1c-5.2,0-9.4-4.2-9.4-9.4v-31.5c0-5.2,4.2-9.4,9.4-9.4h80.1c5.2,0,9.4,4.2,9.4,9.4v31.5   C802.8,1194,798.6,1198.2,793.4,1198.2z"
-   id="path396" />
-	<text
-   transform="matrix(1 0 0 1 731.4082 1185.7402)"
-   class="st0 st17 st20"
-   id="text398">{{ deaths.week3.valueFormatted }}</text>
-</g>
-<!--
-{{#if deaths.week3.up}}
-   <polygon
-      class="st26"
-      points="658.7,1159.7 677.4,1159.7 656.7,1180.3 663.8,1187.4 684.4,1166.8 684.4,1185.4 694.5,1185.4 694.5,1159.7 694.5,1149.7 684.4,1149.7 658.7,1149.7 "
-      id="deathsArrowUp3" />
-{{else}}
-   <polygon
-      class="st26"
-      points="658.7,1159.7 677.4,1159.7 656.7,1180.3 663.8,1187.4 684.4,1166.8 684.4,1185.4 694.5,1185.4 694.5,1159.7 694.5,1149.7 684.4,1149.7 658.7,1149.7 "
-      id="deathsArrowUp3" />
-{{/if}}
-{{#if deaths.week2.up}}
-   <polygon
-      class="st6"
-      points="462.1,1148.7 441.2,1148.7 441.2,1156.9 456.3,1156.9 439.6,1173.6 445.3,1179.4 462.1,1162.6   462.1,1177.7 470.2,1177.7 470.2,1156.9 470.2,1148.7 "
-      id="deathsArrowUp2" />
-{{else}}
-   <polygon
-      class="st6"
-      points="462.1,1148.7 441.2,1148.7 441.2,1156.9 456.3,1156.9 439.6,1173.6 445.3,1179.4 462.1,1162.6   462.1,1177.7 470.2,1177.7 470.2,1156.9 470.2,1148.7 "
-      id="deathsArrowUp2" />
-{{/if}}
-{{#if deaths.week3.up}}
-   <polygon
-      class="st19"
-      points="232.8,1168.4 232.8,1147.5 224.7,1147.5 224.7,1162.6 208,1145.9 202.2,1151.6 219,1168.4   203.8,1168.4 203.8,1176.5 224.7,1176.5 232.8,1176.5 "
-      id="deathsArrowDown1"
-      style="fill:#808080;fill-opacity:1" />
-{{else}}
-   <polygon
-      class="st19"
-      points="232.8,1168.4 232.8,1147.5 224.7,1147.5 224.7,1162.6 208,1145.9 202.2,1151.6 219,1168.4   203.8,1168.4 203.8,1176.5 224.7,1176.5 232.8,1176.5 "
-      id="deathsArrowDown1"
-      style="fill:#808080;fill-opacity:1" />
-{{/if}}
--->
-<g
    id="g418">
 	<g
    id="g416">
@@ -1060,40 +982,68 @@
      y="485"
      class="st6 st7 st14"
      id="tspan454">0</tspan></text>
-<text
-   transform="matrix(1 0 0 1 256.5136 1140.4149)"
-   class="st6 st7 st16"
-   id="text458">muertes</text>
-<text
-   transform="matrix(1 0 0 1 493.5136 1140.4149)"
-   class="st6 st7 st16"
-   id="text460">muertes</text>
-<g
-   id="g466">
-	<path
-   class="st6"
-   d="M313.5,1189.3h-61.4c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4h61.4c5.2,0,9.4,4.2,9.4,9.4v22   C322.9,1185.1,318.7,1189.3,313.5,1189.3z"
-   id="path462" />
+<g>
+   <text
+      x="260" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">muertes</text>
+	<rect
+      style="fill:#808080"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="190"
+      y="1150"
+      rx="14"
+      ry="14" />
 	<text
-   transform="matrix(1 0 0 1 265.2537 1178.3403)"
-   class="st0 st17 st18"
-   id="text464">{{ deaths.week1.valueFormatted }}</text>
+      x="260" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ deaths.week1.valueFormatted }}</text>
 </g>
-<g
-   id="g472">
-	<path
-   class="st6"
-   d="M549.8,1189.3h-61.4c-5.2,0-9.4-4.2-9.4-9.4v-22c0-5.2,4.2-9.4,9.4-9.4h61.4c5.2,0,9.4,4.2,9.4,9.4v22   C559.2,1185.1,555,1189.3,549.8,1189.3z"
-   id="path468" />
+<g>
+   <text
+      x="500" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">muertes</text>
+	<rect
+      style="fill:#808080"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="430"
+      y="1150"
+      rx="14"
+      ry="14" />
 	<text
-   transform="matrix(1 0 0 1 504.8621 1178.3403)"
-   class="st0 st17 st18"
-   id="text470">{{ deaths.week2.valueFormatted }}</text>
+      x="500" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ deaths.week2.valueFormatted }}</text>
 </g>
-<text
-   transform="matrix(1 0 0 1 733.5136 1140.4149)"
-   class="st6 st7 st16"
-   id="text474">muertes</text>
+<g>
+   <text
+      x="740" y="1140"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st6 st7 st16">muertes</text>
+	<rect
+      style="fill:#808080"
+      width="140"
+      height="46"
+      x="670"
+      y="1150"
+      rx="14"
+      ry="14" />
+	<text
+      x="740" y="1185"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18">{{ deaths.week3.valueFormatted }}</text>
+</g>
 <circle
    class="st6"
    cx="379.5"
