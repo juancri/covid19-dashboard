@@ -1,12 +1,14 @@
 
 import Enumerable from 'linq';
 import { DateTime } from "luxon";
+import formatNumber from 'format-number';
 
 import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
 import CsvDownloader from "../util/CsvDownloader";
 
+const FORMAT = formatNumber({ integerSeparator: '.' });
 const DATE_FORMAT = 'yyyy-MM-dd';
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
@@ -74,6 +76,7 @@ export default class DeathsDataLoader
 			graph: path,
 			lastGraphValue: graphPoints[graphPoints.length - 1].y,
 			up: currentWeek > previousWeek,
+			valueFormatted: FORMAT(currentWeek),
 			value: currentWeek
 		};
 	}

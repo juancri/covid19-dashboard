@@ -1,12 +1,14 @@
 
 import Enumerable from 'linq';
 import { DateTime } from "luxon";
+import formatNumber from 'format-number';
 
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
 import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
 
+const FORMAT = formatNumber({ integerSeparator: '.' });
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://github.com/MinCiencia/Datos-COVID19/raw/master/output/producto49/Positividad_Diaria_Media.csv';
@@ -66,12 +68,14 @@ export default class PositivityDataLoader
 		const current = this.getValue(row, week.to);
 		const graphPoints = GraphGenerator.generate(config, graphValues);
 		const path = SvgPathGenerator.generate(graphPoints);
+		const value = Math.round(current);
 
 		return {
 			graph: path,
 			lastGraphValue: graphPoints[graphPoints.length - 1].y,
 			up: current > previous,
-			value: Math.round(current)
+			valueFormatted: FORMAT(value),
+			value,
 		};
 	}
 

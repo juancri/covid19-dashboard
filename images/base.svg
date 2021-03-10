@@ -305,7 +305,9 @@
 	<text
    transform="matrix(1 0 0 1 259.1067 318.3403)"
    class="st0 st17 st18"
-   id="text94">{{ newCases.week1.value }}</text>
+   id="text94"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan1050">{{ newCases.week1.valueFormatted }}</tspan></text>
 </g>
 <g
    id="g102">
@@ -316,7 +318,9 @@
 	<text
    transform="matrix(1 0 0 1 493.4172 318.3403)"
    class="st0 st17 st18"
-   id="text100">{{ newCases.week2.value }}</text>
+   id="text100"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan1052">{{ newCases.week2.valueFormatted }}</tspan></text>
 </g>
 <text
    transform="matrix(1 0 0 1 740.0515 280.415)"
@@ -329,7 +333,9 @@
 <text
    transform="matrix(1 0 0 1 711.9634 326.3403)"
    class="st0 st17 st20"
-   id="text108">{{ newCases.week3.value }}</text>
+   id="text108"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan1054">{{ newCases.week3.valueFormatted }}</tspan></text>
 <text
    transform="translate(355.2807,1007.5854)"
    class="st21 st17 st22"
@@ -550,7 +556,7 @@
 	<text
    transform="matrix(1 0 0 1 1703.9639 1185.7402)"
    class="st0 st17 st20"
-   id="text264">{{ positivity.week3.value }}%</text>
+   id="text264">{{ positivity.week3.valueFormatted }}%</text>
 </g>
 <!--
 {{#if positivity.week3.up}}
@@ -740,7 +746,7 @@
 	<text
    transform="matrix(1 0 0 1 1244.6176 1178.3423)"
    class="st0 st17 st18"
-   id="text326">{{ positivity.week1.value }}%</text>
+   id="text326">{{ positivity.week1.valueFormatted }}%</text>
 </g>
 <g
    id="g334">
@@ -751,7 +757,7 @@
 	<text
    transform="matrix(1 0 0 1 1471.42 1178.3423)"
    class="st0 st17 st18"
-   id="text332">{{ positivity.week2.value }}%</text>
+   id="text332">{{ positivity.week2.valueFormatted }}%</text>
 </g>
 <text
    transform="matrix(1 0 0 1 1700.3107 1140.4169)"
@@ -893,7 +899,7 @@
 	<text
    transform="matrix(1 0 0 1 731.4082 1185.7402)"
    class="st0 st17 st20"
-   id="text398">{{ deaths.week3.value }}</text>
+   id="text398">{{ deaths.week3.valueFormatted }}</text>
 </g>
 <!--
 {{#if deaths.week3.up}}
@@ -1071,7 +1077,7 @@
 	<text
    transform="matrix(1 0 0 1 265.2537 1178.3403)"
    class="st0 st17 st18"
-   id="text464">{{ deaths.week1.value }}</text>
+   id="text464">{{ deaths.week1.valueFormatted }}</text>
 </g>
 <g
    id="g472">
@@ -1082,7 +1088,7 @@
 	<text
    transform="matrix(1 0 0 1 504.8621 1178.3403)"
    class="st0 st17 st18"
-   id="text470">{{ deaths.week2.value }}</text>
+   id="text470">{{ deaths.week2.valueFormatted }}</text>
 </g>
 <text
    transform="matrix(1 0 0 1 733.5136 1140.4149)"
