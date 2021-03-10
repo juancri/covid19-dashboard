@@ -44,6 +44,10 @@
 <style
    type="text/css"
    id="style2">
+
+   .up{fill:#F15A24}
+   .down{fill:#3FA9F5}
+
 	.st0{fill:#F6F6F6;}
 	.st1{fill:#FFFFFF;stroke:#E6E6E6;stroke-miterlimit:10;}
 	.st2{fill:none;}
@@ -296,15 +300,27 @@
    alignment-baseline="middle"
    class="st6 st7 st16"
    id="text90">casos</text>
-	<rect
-   style="fill:#808080"
-   id="rect1076"
-   width="140"
-   height="46"
-   x="190"
-   y="290"
-   rx="14"
-   ry="14" />
+   {{#if newCases.week1.up }}
+      <rect
+      class="up"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="190"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{else}}
+      <rect
+      class="down"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="190"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{/if}}
 	<text
    x="260" y="325"
    text-anchor="middle"
@@ -321,15 +337,27 @@
    alignment-baseline="middle"
    class="st6 st7 st16"
    id="text90">casos</text>
-	<rect
-   style="fill:#808080"
-   id="rect1076"
-   width="140"
-   height="46"
-   x="430"
-   y="290"
-   rx="14"
-   ry="14" />
+   {{#if newCases.week2.up }}
+      <rect
+      class="up"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="430"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{else}}
+      <rect
+      class="down"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="430"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{/if}}
 	<text
    x="500" y="325"
    text-anchor="middle"
@@ -346,15 +374,27 @@
    alignment-baseline="middle"
    class="st6 st7 st16"
    id="text90">casos</text>
-	<rect
-   style="fill:#808080"
-   id="rect1076"
-   width="140"
-   height="46"
-   x="670"
-   y="290"
-   rx="14"
-   ry="14" />
+   {{#if newCases.week3.up }}
+      <rect
+      class="up"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="670"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{else}}
+      <rect
+      class="down"
+      id="rect1076"
+      width="140"
+      height="46"
+      x="670"
+      y="290"
+      rx="14"
+      ry="14" />
+   {{/if}}
 	<text
    x="740" y="325"
    text-anchor="middle"
@@ -676,15 +716,27 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">positivos</text>
-	<rect
-      style="fill:#808080"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="1165"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if positivity.week1.up }}
+      <rect
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1165"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1165"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="1235" y="1185"
       text-anchor="middle"
@@ -697,15 +749,27 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">positivos</text>
-	<rect
-      style="fill:#808080"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="1405"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if positivity.week2.up }}
+      <rect
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1405"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1405"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="1475" y="1185"
       text-anchor="middle"
@@ -718,15 +782,27 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">positivos</text>
-	<rect
-      style="fill:#808080"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="1645"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if positivity.week3.up }}
+      <rect
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1645"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="1645"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="1715" y="1185"
       text-anchor="middle"
@@ -988,15 +1064,27 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">muertes</text>
-	<rect
-      style="fill:#808080"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="190"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if deaths.week1.up }}
+      <rect
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="190"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="190"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="260" y="1185"
       text-anchor="middle"
@@ -1009,15 +1097,27 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">muertes</text>
-	<rect
-      style="fill:#808080"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="430"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if deaths.week2.up }}
+      <rect
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="430"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="430"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="500" y="1185"
       text-anchor="middle"
@@ -1030,14 +1130,25 @@
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">muertes</text>
-	<rect
-      style="fill:#808080"
-      width="140"
-      height="46"
-      x="670"
-      y="1150"
-      rx="14"
-      ry="14" />
+   {{#if deaths.week3.up }}
+      <rect
+         class="up"
+         width="140"
+         height="46"
+         x="670"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{else}}
+      <rect
+         class="down"
+         width="140"
+         height="46"
+         x="670"
+         y="1150"
+         rx="14"
+         ry="14" />
+   {{/if}}
 	<text
       x="740" y="1185"
       text-anchor="middle"
