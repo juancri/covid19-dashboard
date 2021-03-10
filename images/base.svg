@@ -842,16 +842,19 @@
    d="M1924.9,181.9H1830c-12.5,0-22.5-10.1-22.5-22.5V64.4c0-12.5,10.1-22.5,22.5-22.5h94.9   c12.5,0,22.5,10.1,22.5,22.5v94.9C1947.4,171.8,1937.3,181.9,1924.9,181.9z"
    id="path374" />
 	<text
-   transform="matrix(1 0 0 1 1572.4794 101.0727)"
-   id="text380"><tspan
-     x="0"
-     y="0"
+   id="text380"
+   x="1755.9944"
+   y="104.53751"><tspan
+     x="1775.9944"
+     y="104.53751"
      class="st3 st7 st39"
-     id="tspan376">{{ header.date.dayOfWeek }}</tspan><tspan
-     x="39.9"
-     y="49"
+     id="tspan376"
+     style="text-align:end;text-anchor:end">{{ header.date.dayOfWeek }}</tspan><tspan
+     x="1775.9944"
+     y="153.53752"
      class="st3 st7 st39"
-     id="tspan378">{{ header.date.month }}</tspan></text>
+     id="tspan378"
+     style="text-align:end;text-anchor:end">{{ header.date.month }}</tspan></text>
    {{#if header.date.dayOfMonthIsShort }}
 	<text
    transform="matrix(1 0 0 1 1818.1021 142.7348)"
