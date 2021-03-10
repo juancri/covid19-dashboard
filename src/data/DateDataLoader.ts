@@ -36,8 +36,8 @@ export default class DateDataLoader
 		return {
 			dayOfMonth: today.day,
 			dayOfMonthFormatted: today.toFormat(DAY_OF_MONTH_FORMAT),
-			dayOfWeek: WEEKDAYS.get(today.weekday) || '',
-			month: MONTHS.get(today.month) || ''
+			dayOfWeek: WEEKDAYS.get(today.weekday)?.toUpperCase() || '',
+			month: MONTHS.get(today.month)?.toUpperCase() || ''
 		};
 	}
 
