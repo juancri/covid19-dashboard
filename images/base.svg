@@ -855,17 +855,10 @@
      class="st3 st7 st39"
      id="tspan378"
      style="text-align:end;text-anchor:end">{{ header.date.month }}</tspan></text>
-   {{#if header.date.dayOfMonthIsShort }}
 	<text
    transform="matrix(1 0 0 1 1818.1021 142.7348)"
    class="st0 st4 st40"
-   id="text382">0{{ header.date.dayOfMonth }}</text>
-   {{else}}
-	<text
-   transform="matrix(1 0 0 1 1818.1021 142.7348)"
-   class="st0 st4 st40"
-   id="text382">{{ header.date.dayOfMonth }}</text>
-   {{/if}}
+   id="text382">{{ header.date.dayOfMonthFormatted }}</text>
 </g>
 <path
    class="st41"

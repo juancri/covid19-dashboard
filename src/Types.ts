@@ -4,7 +4,7 @@ export interface DataHeaderData
 {
 	dayOfWeek: string;
 	dayOfMonth: number;
-	dayOfMonthIsShort: boolean;
+	dayOfMonthFormatted: string;
 	month: string;
 }
 

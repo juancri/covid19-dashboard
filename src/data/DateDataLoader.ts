@@ -4,6 +4,7 @@ import { DateTime } from 'luxon';
 import { DataHeaderData, DataWeek, DataWeeks } from "../Types";
 
 const DAY_FORMAT = 'dd/MM';
+const DAY_OF_MONTH_FORMAT = 'dd';
 const MONTHS = new Map<number, string>([
 	[1, 'enero'],
 	[2, 'febrero'],
@@ -34,7 +35,7 @@ export default class DateDataLoader
 	{
 		return {
 			dayOfMonth: today.day,
-			dayOfMonthIsShort: today.day < 10,
+			dayOfMonthFormatted: today.toFormat(DAY_OF_MONTH_FORMAT),
 			dayOfWeek: WEEKDAYS.get(today.weekday) || '',
 			month: MONTHS.get(today.month) || ''
 		};
