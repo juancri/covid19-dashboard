@@ -277,7 +277,7 @@
      class="st6 st7 st14"
      id="tspan76">0</tspan></text>
 <text
-   transform="matrix(1 0 0 1 139.6057 943.4149)"
+   transform="matrix(1 0 0 1 105 943.4149)"
    class="st6 st7 st15"
    id="text82">{{ weeks.first.fromFormatted }}</text>
 <text
@@ -289,7 +289,7 @@
    class="st6 st7 st15"
    id="text84">{{ weeks.third.fromFormatted }}</text>
 <text
-   transform="matrix(1 0 0 1 795.2953 943.4149)"
+   transform="matrix(1 0 0 1 810 943.4149)"
    class="st6 st7 st15"
    id="text86">{{ weeks.third.toFormatted }}</text>
 <g
@@ -832,19 +832,19 @@
    r="6.7"
    id="circle344" />
 <text
-   transform="matrix(1 0 0 1 1126.5569 1807.3701)"
+   transform="matrix(1 0 0 1 1085 1807.3701)"
    class="st6 st7 st15"
    id="text348">{{ weeks.first.fromFormatted }}</text>
 <text
-   transform="matrix(1 0 0 1 1338.145 1807.3701)"
+   transform="matrix(1 0 0 1 1320 1807.3701)"
    class="st6 st7 st15"
    id="text346">{{ weeks.second.fromFormatted }}</text>
 <text
-   transform="matrix(1 0 0 1 1572.1449 1807.3701)"
+   transform="matrix(1 0 0 1 1555 1807.3701)"
    class="st6 st7 st15"
    id="text350">{{ weeks.third.fromFormatted }}</text>
 <text
-   transform="matrix(1 0 0 1 1776.0433 1807.3701)"
+   transform="matrix(1 0 0 1 1785 1807.3701)"
    class="st6 st7 st15"
    id="text352">{{ weeks.third.toFormatted }}</text>
 <path
@@ -1221,7 +1221,7 @@
    r="6.7"
    id="circle496" />
 <text
-   transform="matrix(1 0 0 1 141.0502 1807.3701)"
+   transform="matrix(1 0 0 1 105 1807.3701)"
    class="st6 st7 st15"
    id="text500">{{ weeks.first.fromFormatted }}</text>
 <text
@@ -1233,7 +1233,7 @@
    class="st6 st7 st15"
    id="text502">{{ weeks.third.fromFormatted }}</text>
 <text
-   transform="matrix(1 0 0 1 796.7399 1807.3701)"
+   transform="matrix(1 0 0 1 810 1807.3701)"
    class="st6 st7 st15"
    id="text504">{{ weeks.third.toFormatted }}</text>
 <text
