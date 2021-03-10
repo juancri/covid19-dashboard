@@ -8,7 +8,12 @@ import SvgPathGenerator from "../drawing/SvgPathGenerator";
 import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
 
-const FORMAT = formatNumber({ integerSeparator: '.' });
+const FORMAT = formatNumber({
+	integerSeparator: '.',
+	decimal: ',',
+	truncate: 1,
+	suffix: '%'
+});
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://github.com/MinCiencia/Datos-COVID19/raw/master/output/producto49/Positividad_Diaria_Media.csv';
@@ -68,7 +73,7 @@ export default class PositivityDataLoader
 		const current = this.getValue(row, week.to);
 		const graphPoints = GraphGenerator.generate(config, graphValues);
 		const path = SvgPathGenerator.generate(graphPoints);
-		const value = Math.round(current);
+		const value = current;
 
 		return {
 			graph: path,

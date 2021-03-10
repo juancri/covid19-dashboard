@@ -689,7 +689,7 @@
       x="1235" y="1185"
       text-anchor="middle"
       alignment-baseline="middle"
-      class="st0 st17 st18">{{ positivity.week1.valueFormatted }}%</text>
+      class="st0 st17 st18">{{ positivity.week1.valueFormatted }}</text>
 </g>
 <g>
    <text
@@ -710,7 +710,7 @@
       x="1475" y="1185"
       text-anchor="middle"
       alignment-baseline="middle"
-      class="st0 st17 st18">{{ positivity.week2.valueFormatted }}%</text>
+      class="st0 st17 st18">{{ positivity.week2.valueFormatted }}</text>
 </g>
 <g>
    <text
@@ -731,7 +731,7 @@
       x="1715" y="1185"
       text-anchor="middle"
       alignment-baseline="middle"
-      class="st0 st17 st18">{{ positivity.week3.valueFormatted }}%</text>
+      class="st0 st17 st18">{{ positivity.week3.valueFormatted }}</text>
 </g>
 <text
    transform="translate(1352.9371,1867.5874)"
