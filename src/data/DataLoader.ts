@@ -10,9 +10,8 @@ import VaccinationDataLoader from "./VaccinationDataLoader";
 
 export default class DataLoader
 {
-	public static async loadTree(): Promise<DataTree>
+	public static async loadTree(today: DateTime): Promise<DataTree>
 	{
-		const today = DateTime.local();
 		const dataWeeks = DateDataLoader.loadWeeks(today);
 		return {
 			header: {

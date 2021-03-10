@@ -1,8 +1,34 @@
+
+import Enumerable from 'linq';
 import { DateTime } from "luxon";
-import { DataWeek, DataWeeklyTrends, DataWeeks, Row } from "../Types";
+
+import GraphGenerator from "../drawing/GraphGenerator";
+import SvgPathGenerator from "../drawing/SvgPathGenerator";
+import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
 
+const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://github.com/MinCiencia/Datos-COVID19/raw/master/output/producto49/Positividad_Diaria_Media.csv';
+const BOX_1: Box = {
+	left: 1_117.2,
+	right: 1_352.6,
+	top: 1266.3,
+	bottom: 1754.2
+};
+const BOX_2: Box = {
+	left: 1_352.6,
+	right: 1_587,
+	top: 1266.3,
+	bottom: 1754.2
+};
+const BOX_3: Box = {
+	left: 1_587,
+	right: 1_822.4,
+	top: 1266.3,
+	bottom: 1754.2
+};
+
 
 export default class PositivityDataLoader
 {
@@ -13,29 +39,74 @@ export default class PositivityDataLoader
 		const row = rows.find(r => r.Fecha === 'mediamovil_positividad');
 		if (!row)
 			throw new Error('Cannot find row: mediamovil_positividad');
+		const rowAvg7 = this.getAvg7(row);
+		const graphValues1 = Array.from(this.getGraphValues(rowAvg7, weeks.first));
+		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
+		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
+		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3 ];
+		const scale = this.getScale(allValues);
 
 		return {
-			week1: this.loadWeek(row, weeks.first),
-			week2: this.loadWeek(row, weeks.second),
-			week3: this.loadWeek(row, weeks.third)
+			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, weeks.first),
+			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, weeks.second),
+			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, weeks.third)
 		};
 	}
 
-	private static loadWeek(row: Row, week: DataWeek)
+	private static getScale(_values: number[]): Scale
+	{
+		// TODO: const max = Enumerable.from(values).max();
+		// Using a static scale for now
+		return { min: 0, max: 20 };
+	}
+
+	private static getWeek(row: Row, config: GraphConfiguration, graphValues: number[], week: DataWeek): DataWeeklyTrend
 	{
 		const previous = this.getValue(row, week.from);
 		const current = this.getValue(row, week.to);
+		const graphPoints = GraphGenerator.generate(config, graphValues);
+		const path = SvgPathGenerator.generate(graphPoints);
+
 		return {
-			graph: '',
+			graph: path,
+			lastGraphValue: graphPoints[graphPoints.length - 1].y,
 			up: current > previous,
-			value: current
+			value: Math.round(current)
 		};
+	}
+
+	private static getAvg7(row: Row): Row
+	{
+		const dates = Object
+			.keys(row)
+			.filter(k => DATE_REGEX.exec(k));
+		const newRow = { ...row };
+		for (const currentDate of dates)
+		{
+			const previousDates = Array.from(this.getPreviousDates(currentDate));
+			if (previousDates.some(d => !dates.includes(d)))
+				continue;
+			const previousValues = previousDates
+				.map(d => this.getNumber(row[d]));
+			const avg = Enumerable
+				.from(previousValues)
+				.average();
+			newRow[currentDate] = avg;
+		}
+		return newRow;
+	}
+
+	private static *getPreviousDates(dateString: string): Generator<string>
+	{
+		const date = DateTime.fromISO(dateString, DATE_OPTIONS);
+		for (let days = -6; days <= 0; days++)
+			yield date.plus({ days }).toISODate();
 	}
 
 	private static getValue(row: Row, date: DateTime): number
 	{
 		const num = this.getNumber(row[date.toISODate()]);
-		return Math.round(num * 100);
+		return num * 100;
 	}
 
 	private static getNumber(input: number | string): number
@@ -43,5 +114,11 @@ export default class PositivityDataLoader
 		return typeof input === 'number' ?
 			input :
 			parseFloat(input);
+	}
+
+	private static *getGraphValues(row: Row, week: DataWeek): Generator<number>
+	{
+		for (let current = week.from; +current <= +week.to; current = current.plus({ days: 1 }))
+			yield this.getValue(row, current);
 	}
 }

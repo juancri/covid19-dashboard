@@ -34,6 +34,7 @@ export interface DataWeeklyTrend
 	value: number;
 	up: boolean;
 	graph: string;
+	lastGraphValue: number;
 }
 
 export interface DataWeeklyTrends
@@ -75,3 +76,25 @@ export interface DataTree
 }
 
 export type Row = { [key: string]: string | number };
+
+export interface Point {
+	x: number;
+	y: number;
+}
+
+export interface Box {
+	left: number;
+	right: number;
+	top: number;
+	bottom: number;
+}
+
+export interface Scale {
+	min: number;
+	max: number;
+}
+
+export interface GraphConfiguration {
+	box: Box;
+	scale: Scale;
+}
