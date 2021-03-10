@@ -899,6 +899,7 @@
    class="st0 st17 st20"
    id="text398">{{ deaths.week3.value }}</text>
 </g>
+<!--
 {{#if deaths.week3.up}}
    <polygon
       class="st26"
@@ -934,6 +935,7 @@
       id="deathsArrowDown1"
       style="fill:#808080;fill-opacity:1" />
 {{/if}}
+-->
 <g
    id="g418">
 	<g
