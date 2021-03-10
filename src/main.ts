@@ -1,6 +1,7 @@
 
 import { DateTime } from "luxon";
 import DataLoader from "./data/DataLoader";
+import DataWriter from "./data/DataWriter";
 import TemplateManager from "./template/TemplateManager";
 
 const DATE_OPTIONS = { zone: 'utc' };
@@ -14,6 +15,7 @@ const DATE_OPTIONS = { zone: 'utc' };
 			DateTime.fromISO(inputDate, DATE_OPTIONS) :
 			DateTime.utc().startOf('day');
 		const data = await DataLoader.loadTree(today);
+		DataWriter.write(data);
 		const svgPath = TemplateManager.write(data);
 		console.log(svgPath);
 	}
