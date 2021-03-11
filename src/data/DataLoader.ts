@@ -15,7 +15,7 @@ export default class DataLoader
 		const dataWeeks = DateDataLoader.loadWeeks(today);
 		return {
 			header: {
-				title: 'Chile',
+				title: 'CHILE',
 				date: DateDataLoader.loadDate(today)
 			},
 			weeks: dataWeeks,
