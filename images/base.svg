@@ -53,7 +53,7 @@
 	.st2{fill:none;}
 	.st3{fill:#333333;}
 	.st4{font-family:'Roboto-Medium';}
-	.st5{font-size:42px;}
+	.st5{font-size:100px;}
 	.st6{fill:#808080;}
 	.st7{font-family:'Roboto-Regular';}
 	.st8{font-size:26px;}
@@ -85,8 +85,8 @@
 	.st34{fill:none;stroke:#B3B3B3;stroke-miterlimit:10;}
 	.st35{fill:#E6E6E6;}
 	.st36{fill:#FFFFFF;stroke:#4D4D4D;stroke-width:3.7658;stroke-miterlimit:10;}
-	.st37{font-size:24.7334px;}
-	.st38{font-family:'Roboto-Black';}
+	.st37{font-size:35px;}
+	.st38{font-family:'Roboto-Black';font-weight:bold}
 	.st39{font-size:49px;}
 	.st40{font-size:90px;}
 	.st41{fill:none;stroke:#E6E6E6;stroke-width:3.7658;stroke-miterlimit:10;}
@@ -136,7 +136,7 @@
    height="57.1"
    id="rect12" />
 <text
-   transform="matrix(1 0 0 1 59.7245 110.7316)"
+   transform="matrix(1 0 0 1 59 150)"
    class="st3 st4 st5"
    id="text14">{{ header.title }}</text>
 <rect
@@ -867,25 +867,20 @@
    id="circle360" />
 <g
    id="g372">
-	<path
-   class="st6"
-   d="M 544.4,181.8 H 315.7 c -7.1,0 -12.8,-5.8 -12.8,-12.8 v -16.7 c 0,-7.1 5.8,-12.8 12.8,-12.8 h 228.7 c 7.1,0 12.8,5.8 12.8,12.8 V 169 c 0.1,7 -5.7,12.8 -12.8,12.8 z"
-   id="path362" />
+	<rect
+   style="fill:#808080"
+   id="rect1101"
+   width="357"
+   height="60"
+   x="1592"
+   y="1925"
+   rx="13.4612"
+   ry="14.4666" />
 	<text
-   transform="matrix(1 0 0 1 60.1924 168.9683)"
+   transform="matrix(1 0 0 1 1608 1967)"
    id="text370"><tspan
-     x="0"
-     y="0"
-     class="st6 st4 st37"
-     id="tspan364">COVID-19 en Chile</tspan><tspan
-     x="254.9"
-     y="0"
-     class="st0 st38 st37"
-     id="tspan366">@</tspan><tspan
-     x="277.1"
-     y="0"
      class="st0 st4 st37"
-     id="tspan368">COVID19StatsCL</tspan></text>
+     id="tspan368">@COVID19StatsCL</tspan></text>
 </g>
 <g
    id="g384">
