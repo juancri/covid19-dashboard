@@ -45,6 +45,8 @@
    type="text/css"
    id="style2">
 
+   .upPrevious{fill:#808080;}
+   .downPrevious{fill:#808080;}
    .up{fill:#F15A24}
    .down{fill:#3FA9F5}
 
@@ -302,7 +304,7 @@
    id="text90">casos</text>
    {{#if newCases.week1.up }}
       <rect
-         class="up"
+         class="upPrevious"
          width="140"
          height="46"
          x="215"
@@ -310,12 +312,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(55, -123)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -324,7 +326,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(55, -385)" />
    {{/if}}
@@ -345,7 +347,7 @@
    id="text90">casos</text>
    {{#if newCases.week2.up }}
       <rect
-         class="up"
+         class="upPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -354,12 +356,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(290, -123)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -368,7 +370,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(290, -385)" />
    {{/if}}
@@ -738,7 +740,7 @@
       class="st6 st7 st16">positivos</text>
    {{#if positivity.week1.up }}
       <rect
-         class="up"
+         class="upPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -747,12 +749,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(1030, 737)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -761,7 +763,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(1030, 475)" />
    {{/if}}
@@ -779,7 +781,7 @@
       class="st6 st7 st16">positivos</text>
    {{#if positivity.week2.up }}
       <rect
-         class="up"
+         class="upPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -788,12 +790,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(1265, 737)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -802,7 +804,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(1265, 475)" />
    {{/if}}
@@ -1105,7 +1107,7 @@
       class="st6 st7 st16">muertes</text>
    {{#if deaths.week1.up }}
       <rect
-         class="up"
+         class="upPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -1114,12 +1116,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(205, 737)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -1128,7 +1130,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(205, 475)" />
    {{/if}}
@@ -1146,7 +1148,7 @@
       class="st6 st7 st16">muertes</text>
    {{#if deaths.week2.up }}
       <rect
-         class="up"
+         class="upPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -1155,12 +1157,12 @@
          rx="14"
          ry="14" />
       <polygon
-         class="up"
+         class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
          transform="translate(290, 737)" />
    {{else}}
       <rect
-         class="down"
+         class="downPrevious"
          id="rect1076"
          width="140"
          height="46"
@@ -1169,7 +1171,7 @@
          rx="14"
          ry="14" />
       <polygon
-         class="down"
+         class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
          transform="translate(290, 475)" />
    {{/if}}
