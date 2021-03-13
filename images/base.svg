@@ -1118,7 +1118,7 @@
       <polygon
          class="upPrevious"
          points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
-         transform="translate(205, 737)" />
+         transform="translate(55, 737)" />
    {{else}}
       <rect
          class="downPrevious"
@@ -1132,7 +1132,7 @@
       <polygon
          class="downPrevious"
          points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
-         transform="translate(205, 475)" />
+         transform="translate(55, 475)" />
    {{/if}}
 	<text
       x="285" y="1186"
