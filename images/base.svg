@@ -66,7 +66,7 @@
 	.st15{font-size:24px;}
 	.st16{font-size:18px;}
 	.st17{font-family:'Roboto-Bold';}
-	.st18{font-size:26.6634px;}
+	.st18{font-size:32;}
 	.st19{fill:#29ABE2;}
 	.st20{font-size:36px;}
 	.st21{fill:#666666;}
@@ -302,106 +302,126 @@
    id="text90">casos</text>
    {{#if newCases.week1.up }}
       <rect
-      class="up"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="190"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="up"
+         width="140"
+         height="46"
+         x="215"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(55, -123)" />
    {{else}}
       <rect
-      class="down"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="190"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="215"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(55, -385)" />
    {{/if}}
 	<text
-   x="260" y="325"
-   text-anchor="middle"
-   alignment-baseline="middle"
-   class="st0 st17 st18"
-
-   id="text94">{{ newCases.week1.valueFormatted }}</text>
+      x="285" y="326"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18"
+      id="text94">{{ newCases.week1.valueFormatted }}</text>
 </g>
 <g
    id="g96">
    <text
-   x="500" y="280"
+   x="495" y="280"
    text-anchor="middle"
    alignment-baseline="middle"
    class="st6 st7 st16"
    id="text90">casos</text>
    {{#if newCases.week2.up }}
       <rect
-      class="up"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="430"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="450"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(290, -123)" />
    {{else}}
       <rect
-      class="down"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="430"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="450"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(290, -385)" />
    {{/if}}
 	<text
-   x="500" y="325"
-   text-anchor="middle"
-   alignment-baseline="middle"
-   class="st0 st17 st18"
-
-   id="text94">{{ newCases.week2.valueFormatted }}</text>
+      x="520" y="326"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18"
+      id="text94">{{ newCases.week2.valueFormatted }}</text>
 </g>
 <g
    id="g96">
    <text
-   x="740" y="280"
+   x="730" y="280"
    text-anchor="middle"
    alignment-baseline="middle"
    class="st6 st7 st16"
    id="text90">casos</text>
    {{#if newCases.week3.up }}
       <rect
-      class="up"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="670"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="up"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="685"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(525, -123)" />
    {{else}}
       <rect
-      class="down"
-      id="rect1076"
-      width="140"
-      height="46"
-      x="670"
-      y="290"
-      rx="14"
-      ry="14" />
+         class="down"
+         id="rect1076"
+         width="140"
+         height="46"
+         x="685"
+         y="290"
+         rx="14"
+         ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(525, -385)" />
    {{/if}}
 	<text
-   x="740" y="325"
-   text-anchor="middle"
-   alignment-baseline="middle"
-   class="st0 st17 st18"
-
-   id="text94">{{ newCases.week3.valueFormatted }}</text>
+      x="755" y="326"
+      text-anchor="middle"
+      alignment-baseline="middle"
+      class="st0 st17 st18"
+      id="text94">{{ newCases.week3.valueFormatted }}</text>
 </g>
 <text
    transform="translate(355.2807,1007.5854)"
@@ -722,30 +742,38 @@
          id="rect1076"
          width="140"
          height="46"
-         x="1165"
+         x="1190"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(1030, 737)" />
    {{else}}
       <rect
          class="down"
          id="rect1076"
          width="140"
          height="46"
-         x="1165"
+         x="1190"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(1030, 475)" />
    {{/if}}
 	<text
-      x="1235" y="1185"
+      x="1260" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ positivity.week1.valueFormatted }}</text>
 </g>
 <g>
    <text
-      x="1475" y="1140"
+      x="1470" y="1140"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">positivos</text>
@@ -755,30 +783,38 @@
          id="rect1076"
          width="140"
          height="46"
-         x="1405"
+         x="1425"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(1265, 737)" />
    {{else}}
       <rect
          class="down"
          id="rect1076"
          width="140"
          height="46"
-         x="1405"
+         x="1425"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(1265, 475)" />
    {{/if}}
 	<text
-      x="1475" y="1185"
+      x="1495" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ positivity.week2.valueFormatted }}</text>
 </g>
 <g>
    <text
-      x="1715" y="1140"
+      x="1705" y="1140"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">positivos</text>
@@ -788,23 +824,31 @@
          id="rect1076"
          width="140"
          height="46"
-         x="1645"
+         x="1660"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(1500, 737)" />
    {{else}}
       <rect
          class="down"
          id="rect1076"
          width="140"
          height="46"
-         x="1645"
+         x="1660"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(1500, 475)" />
    {{/if}}
 	<text
-      x="1715" y="1185"
+      x="1730" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ positivity.week3.valueFormatted }}</text>
@@ -1065,30 +1109,38 @@
          id="rect1076"
          width="140"
          height="46"
-         x="190"
+         x="215"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(205, 737)" />
    {{else}}
       <rect
          class="down"
          id="rect1076"
          width="140"
          height="46"
-         x="190"
+         x="215"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(205, 475)" />
    {{/if}}
 	<text
-      x="260" y="1185"
+      x="285" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ deaths.week1.valueFormatted }}</text>
 </g>
 <g>
    <text
-      x="500" y="1140"
+      x="495" y="1140"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">muertes</text>
@@ -1098,30 +1150,38 @@
          id="rect1076"
          width="140"
          height="46"
-         x="430"
+         x="450"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(290, 737)" />
    {{else}}
       <rect
          class="down"
          id="rect1076"
          width="140"
          height="46"
-         x="430"
+         x="450"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(290, 475)" />
    {{/if}}
 	<text
-      x="500" y="1185"
+      x="520" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ deaths.week2.valueFormatted }}</text>
 </g>
 <g>
    <text
-      x="740" y="1140"
+      x="730" y="1140"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st6 st7 st16">muertes</text>
@@ -1130,22 +1190,30 @@
          class="up"
          width="140"
          height="46"
-         x="670"
+         x="685"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="up"
+         points="137,452 147,452 147,426.3 147,416.3 137,416.3 111.2,416.3 111.2,426.3 129.9,426.3 109.3,446.9 116.3,454 137,433.4 "
+         transform="translate(525, 737)" />
    {{else}}
       <rect
          class="down"
          width="140"
          height="46"
-         x="670"
+         x="685"
          y="1150"
          rx="14"
          ry="14" />
+      <polygon
+         class="down"
+         points="111.2,705.5 111.2,715.5 137,715.5 147,715.5 147,705.5 147,679.7 137,679.7 137,698.4 116.3,677.7 109.3,684.8 129.9,705.5 "
+         transform="translate(525, 475)" />
    {{/if}}
 	<text
-      x="740" y="1185"
+      x="755" y="1186"
       text-anchor="middle"
       alignment-baseline="middle"
       class="st0 st17 st18">{{ deaths.week3.valueFormatted }}</text>
