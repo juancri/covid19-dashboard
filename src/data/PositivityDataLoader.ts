@@ -51,7 +51,7 @@ export default class PositivityDataLoader
 		const graphValues1 = Array.from(this.getGraphValues(rowAvg7, weeks.first));
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
 		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
-		const scale = ScaleGenerator.generateFixed(20, 4, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
+		const scale = ScaleGenerator.generateFixed(20, 5, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
 
 		return {
 			scale: scale,

@@ -5,30 +5,35 @@ import { Circle, Scale } from "../Types";
 
 type FormatNumber = (x: number) => string;
 
+interface ScaleDefinition
+{
+	max: number;
+	step: number;
+}
+
 export default class ScaleGenerator
 {
 	public static generate(values: number[], x: number, minY: number, maxY: number, format: FormatNumber): Scale
 	{
 		const min = 0;
-		const max = this.getScaleMax(values);
-		const circles = Array.from(this.getCircles(max, x, minY, maxY, format));
-		return { min, max, circles };
+		const scaleDef = this.getScaleDef(values);
+		const circles = Array.from(this.getCircles(scaleDef, x, minY, maxY, format));
+		return { min, max: scaleDef.max, circles };
 	}
 
-	public static generateFixed(max: number, steps: number, x: number, minY: number, maxY: number, format: FormatNumber): Scale
+	public static generateFixed(max: number, step: number, x: number, minY: number, maxY: number, format: FormatNumber): Scale
 	{
 		const min = 0;
-		const circles = Array.from(this.getCircles(max, x, minY, maxY, format, steps));
+		const circles = Array.from(this.getCircles({ max, step }, x, minY, maxY, format));
 		return { min, max, circles }
 	}
 
-	private static *getCircles(max: number, x: number, minY: number, maxY: number, format: FormatNumber, steps = 5): Generator<Circle>
+	private static *getCircles(scaleDef: ScaleDefinition, x: number, minY: number, maxY: number, format: FormatNumber): Generator<Circle>
 	{
-		const step = max / steps;
 		const rangeY = maxY - minY;
-		for (let current = 0; current <= max; current += step)
+		for (let current = 0; current <= scaleDef.max; current += scaleDef.step)
 		{
-			const ratio = current / max;
+			const ratio = current / scaleDef.max;
 			const y = minY + rangeY * ratio;
 			yield {
 				position: { x, y },
@@ -38,18 +43,17 @@ export default class ScaleGenerator
 		}
 	}
 
-	private static getScaleMax(values: number[]): number
+	private static getScaleDef(values: number[]): ScaleDefinition
 	{
 		const maxValue = Enumerable
 			.from(values)
 			.where(v => !!v)
 			.max();
 		const length = Math.log10(maxValue);
-		const nextPow = Math.ceil(length);
-		const nextValue = Math.pow(10, nextPow);
-		const ratio = nextValue / maxValue;
-		return ratio < 2 ?
-			nextValue :
-			nextValue / 2;
+		const basePow = Math.floor(length);
+		const step = Math.pow(10, basePow);
+		const maxSteps = Math.ceil(maxValue / step);
+		const max = maxSteps * step;
+		return { max, step };
 	}
 }
