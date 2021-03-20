@@ -51,9 +51,13 @@ export default class ScaleGenerator
 			.max();
 		const length = Math.log10(maxValue);
 		const basePow = Math.floor(length);
-		const step = Math.pow(10, basePow);
-		const maxSteps = Math.ceil(maxValue / step);
-		const max = maxSteps * step;
+		const baseStep = Math.pow(10, basePow);
+		const ratio = maxValue / baseStep;
+		const maxSteps = Math.ceil(ratio);
+		const max = maxSteps * baseStep;
+		const step = ratio <= 6 ?
+			baseStep :
+			baseStep * 2;
 		return { max, step };
 	}
 }
