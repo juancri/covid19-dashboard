@@ -252,33 +252,6 @@
    y2="901.6"
    id="line64" />
 <text
-   transform="matrix(1 0 0 1 869.7465 428.1479)"
-   id="text78"><tspan
-     x="0"
-     y="0"
-     class="st6 st7 st14"
-     id="tspan66">5k</tspan><tspan
-     x="0"
-     y="96"
-     class="st6 st7 st14"
-     id="tspan68">4k</tspan><tspan
-     x="0"
-     y="192"
-     class="st6 st7 st14"
-     id="tspan70">3k</tspan><tspan
-     x="0"
-     y="288"
-     class="st6 st7 st14"
-     id="tspan72">2k</tspan><tspan
-     x="0"
-     y="384"
-     class="st6 st7 st14"
-     id="tspan74">1k</tspan><tspan
-     x="14.7"
-     y="480"
-     class="st6 st7 st14"
-     id="tspan76">0</tspan></text>
-<text
    transform="matrix(1 0 0 1 105 943.4149)"
    class="st6 st7 st15"
    id="text82">{{ weeks.first.fromFormatted }}</text>
@@ -586,42 +559,49 @@
    cy="900.8"
    r="6.7"
    id="circle246" />
+
+{{#each newCases.scale.circles}}
 <circle
+   transform="translate(6.7, 6.7)"
    class="st6"
-   cx="846.3"
-   cy="900.8"
-   r="6.7"
-   id="circle248" />
+   cx="{{{ this.position.x }}}"
+   cy="{{{ this.position.y }}}"
+   r="6.7" />
+<text
+   transform="translate(12, 15)"
+   x="{{{ this.position.x }}}"
+   y="{{{ this.position.y }}}">
+   <tspan class="st6 st7 st14">{{ this.valueFormatted }}</tspan>
+</text>
+{{/each}}
+{{#each deaths.scale.circles}}
 <circle
+   transform="translate(6.7, 6.7)"
    class="st6"
-   cx="847.4"
-   cy="804.4"
-   r="6.7"
-   id="circle250" />
+   cx="{{{ this.position.x }}}"
+   cy="{{{ this.position.y }}}"
+   r="6.7" />
+<text
+   transform="translate(12, 15)"
+   x="{{{ this.position.x }}}"
+   y="{{{ this.position.y }}}">
+   <tspan class="st6 st7 st14">{{ this.valueFormatted }}</tspan>
+</text>
+{{/each}}
+{{#each positivity.scale.circles}}
 <circle
+   transform="translate(6.7, 6.7)"
    class="st6"
-   cx="847.4"
-   cy="705.9"
-   r="6.7"
-   id="circle252" />
-<circle
-   class="st6"
-   cx="847.4"
-   cy="607.5"
-   r="6.7"
-   id="circle254" />
-<circle
-   class="st6"
-   cx="847.4"
-   cy="511"
-   r="6.7"
-   id="circle256" />
-<circle
-   class="st6"
-   cx="847.4"
-   cy="412.6"
-   r="6.7"
-   id="circle258" />
+   cx="{{{ this.position.x }}}"
+   cy="{{{ this.position.y }}}"
+   r="6.7" />
+<text
+   transform="translate(12, 15)"
+   x="{{{ this.position.x }}}"
+   y="{{{ this.position.y }}}">
+   <tspan class="st6 st7 st14">{{ this.valueFormatted }}</tspan>
+</text>
+{{/each}}
 <text
    class="st32 st7 st8"
    id="text278"
@@ -709,29 +689,6 @@
    x2="1118.7"
    y2="1519.8"
    id="line306" />
-<text
-   transform="matrix(1 0 0 1 1848.7313 1286.1498)"
-   id="text318"><tspan
-     x="0"
-     y="0"
-     class="st6 st7 st14"
-     id="tspan308">20%</tspan><tspan
-     x="0"
-     y="122"
-     class="st6 st7 st14"
-     id="tspan310">15%</tspan><tspan
-     x="0"
-     y="244"
-     class="st6 st7 st14"
-     id="tspan312">10%</tspan><tspan
-     x="0"
-     y="366"
-     class="st6 st7 st14"
-     id="tspan314">5%</tspan><tspan
-     x="0"
-     y="488"
-     class="st6 st7 st14"
-     id="tspan316">0%</tspan></text>
 <g>
    <text
       x="1235" y="1140"
@@ -871,12 +828,7 @@
    cy="1760.9"
    r="6.7"
    id="circle342" />
-<circle
-   class="st6"
-   cx="1823"
-   cy="1760.9"
-   r="6.7"
-   id="circle344" />
+
 <text
    transform="matrix(1 0 0 1 1085 1807.3701)"
    class="st6 st7 st15"
@@ -1072,33 +1024,6 @@
    x2="144.2"
    y2="1761.6"
    id="line442" />
-<text
-   transform="matrix(1 0 0 1 874.1735 1284.1478)"
-   id="text456"><tspan
-     x="0"
-     y="0"
-     class="st6 st7 st14"
-     id="tspan444">100</tspan><tspan
-     x="0"
-     y="97"
-     class="st6 st7 st14"
-     id="tspan446">80</tspan><tspan
-     x="0"
-     y="194"
-     class="st6 st7 st14"
-     id="tspan448">60</tspan><tspan
-     x="0"
-     y="291"
-     class="st6 st7 st14"
-     id="tspan450">40</tspan><tspan
-     x="0"
-     y="388"
-     class="st6 st7 st14"
-     id="tspan452">10</tspan><tspan
-     x="0"
-     y="485"
-     class="st6 st7 st14"
-     id="tspan454">0</tspan></text>
 <g>
    <text
       x="260" y="1140"
@@ -1232,42 +1157,7 @@
    cy="1760.9"
    r="6.7"
    id="circle478" />
-<circle
-   class="st6"
-   cx="848.5"
-   cy="1760.9"
-   r="6.7"
-   id="circle480" />
-<circle
-   class="st6"
-   cx="848.6"
-   cy="1658.7"
-   r="6.7"
-   id="circle482" />
-<circle
-   class="st6"
-   cx="848.6"
-   cy="1562.3"
-   r="6.7"
-   id="circle484" />
-<circle
-   class="st6"
-   cx="848.6"
-   cy="1465.9"
-   r="6.7"
-   id="circle486" />
-<circle
-   class="st6"
-   cx="848.6"
-   cy="1369.4"
-   r="6.7"
-   id="circle488" />
-<circle
-   class="st6"
-   cx="848.6"
-   cy="1273"
-   r="6.7"
-   id="circle490" />
+
 <path
    class="st41"
    d="{{{ deaths.week1.graph }}}" />
@@ -1325,36 +1215,7 @@
    class="st25"
    points="1426.1,696.4 1450.2,710.3 1450.2,682.5 "
    id="polygon516" />
-<circle
-   class="st6"
-   cx="1823.2"
-   cy="1640.1"
-   r="6.7"
-   id="circle518" />
-<circle
-   class="st6"
-   cx="1823.2"
-   cy="1519.4"
-   r="6.7"
-   id="circle520" />
-<circle
-   class="st6"
-   cx="1823.2"
-   cy="1398.6"
-   r="6.7"
-   id="circle522" />
-<circle
-   class="st6"
-   cx="1823.2"
-   cy="1277.8"
-   r="6.7"
-   id="circle524" />
-<circle
-   class="st6"
-   cx="1823.2"
-   cy="1760.9"
-   r="6.7"
-   id="circle526" />
+
 <text
    transform="matrix(1 0 0 1 55.2766 1953.5405)"
    class="st6 st17 st22"

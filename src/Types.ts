@@ -40,6 +40,7 @@ export interface DataWeeklyTrend
 
 export interface DataWeeklyTrends
 {
+	scale: Scale;
 	week1: DataWeeklyTrend;
 	week2: DataWeeklyTrend;
 	week3: DataWeeklyTrend;
@@ -90,9 +91,16 @@ export interface Box {
 	bottom: number;
 }
 
+export interface Circle {
+	value: number;
+	valueFormatted: string;
+	position: Point;
+}
+
 export interface Scale {
 	min: number;
 	max: number;
+	circles: Circle[];
 }
 
 export interface GraphConfiguration {

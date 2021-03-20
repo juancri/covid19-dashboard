@@ -3,10 +3,11 @@ import Enumerable from 'linq';
 import { DateTime } from "luxon";
 import formatNumber from 'format-number';
 
-import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
+import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row } from "../Types";
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
 import CsvDownloader from "../util/CsvDownloader";
+import ScaleGenerator from '../util/ScaleGenerator';
 
 const FORMAT = formatNumber({ integerSeparator: '.' });
 const DATE_FORMAT = 'yyyy-MM-dd';
@@ -14,20 +15,20 @@ const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto5/TotalesNacionales.csv';
 const BOX_1: Box = {
-	left: 142.1,
-	right: 378.1,
+	left: 144.5,
+	right: 380.5,
 	top: 1266.3,
 	bottom: 1754.2
 };
 const BOX_2: Box = {
-	left: 378.1,
-	right: 612.5,
+	left: 380.5,
+	right: 614.9,
 	top: 1266.3,
 	bottom: 1754.2
 };
 const BOX_3: Box = {
-	left: 612.5,
-	right: 839.6,
+	left: 614.9,
+	right: 842,
 	top: 1266.3,
 	bottom: 1754.2
 };
@@ -46,20 +47,14 @@ export default class DeathsDataLoader
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
 		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
 		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3 ];
-		const scale = this.getScale(allValues);
+		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => x.toString());
 
 		return {
+			scale,
 			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, weeks.first),
 			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, weeks.second),
 			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, weeks.third)
 		};
-	}
-
-	private static getScale(_values: number[]): Scale
-	{
-		// TODO: const max = Enumerable.from(values).max();
-		// Using a static scale for now
-		return { min: 0, max: 100 };
 	}
 
 	private static getWeek(row: Row, config: GraphConfiguration, graphValues: number[], week: DataWeek): DataWeeklyTrend

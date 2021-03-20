@@ -5,8 +5,9 @@ import formatNumber from 'format-number';
 
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
-import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
+import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
+import ScaleGenerator from '../util/ScaleGenerator';
 
 const FORMAT = formatNumber({
 	integerSeparator: '.',
@@ -31,7 +32,7 @@ const BOX_2: Box = {
 };
 const BOX_3: Box = {
 	left: 1_587,
-	right: 1_822.4,
+	right: 1_816.4,
 	top: 1266.3,
 	bottom: 1754.2
 };
@@ -50,21 +51,14 @@ export default class PositivityDataLoader
 		const graphValues1 = Array.from(this.getGraphValues(rowAvg7, weeks.first));
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
 		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
-		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3 ];
-		const scale = this.getScale(allValues);
+		const scale = ScaleGenerator.generateFixed(20, 4, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
 
 		return {
+			scale: scale,
 			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, weeks.first),
 			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, weeks.second),
 			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, weeks.third)
 		};
-	}
-
-	private static getScale(_values: number[]): Scale
-	{
-		// TODO: const max = Enumerable.from(values).max();
-		// Using a static scale for now
-		return { min: 0, max: 20 };
 	}
 
 	private static getWeek(row: Row, config: GraphConfiguration, graphValues: number[], week: DataWeek): DataWeeklyTrend

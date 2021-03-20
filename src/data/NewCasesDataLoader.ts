@@ -4,9 +4,10 @@ import Enumerable from 'linq';
 
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
-import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row, Scale } from "../Types";
+import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
 import NumberSuffix from "../util/NumberSuffix";
+import ScaleGenerator from "../util/ScaleGenerator";
 
 const DATE_FORMAT = 'yyyy-MM-dd';
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
@@ -45,20 +46,14 @@ export default class NewCasesDataLoader
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
 		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
 		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3 ];
-		const scale = this.getScale(allValues);
+		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => Math.floor(x / 1000) + 'k');
 
 		return {
+			scale: scale,
 			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, weeks.first),
 			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, weeks.second),
 			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, weeks.third)
 		};
-	}
-
-	private static getScale(_values: number[]): Scale
-	{
-		// TODO: const max = Enumerable.from(values).max();
-		// Using a static scale for now
-		return { min: 0, max: 5_000 };
 	}
 
 	private static getWeek(row: Row, config: GraphConfiguration, graphValues: number[], week: DataWeek): DataWeeklyTrend
