@@ -35,6 +35,7 @@ export interface DataWeeklyTrend
 	valueFormatted: string;
 	up: boolean;
 	graph: string;
+	rawGraph: string;
 	lastGraphValue: number;
 }
 

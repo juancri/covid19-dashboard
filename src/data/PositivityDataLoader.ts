@@ -51,27 +51,35 @@ export default class PositivityDataLoader
 		const graphValues1 = Array.from(this.getGraphValues(rowAvg7, weeks.first));
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
 		const graphValues3 = Array.from(this.getGraphValues(rowAvg7, weeks.third));
+		const graphValues4 = Array.from(this.getGraphValues(row, weeks.first));
+		const graphValues5 = Array.from(this.getGraphValues(row, weeks.second));
+		const graphValues6 = Array.from(this.getGraphValues(row, weeks.third));
 		const scale = ScaleGenerator.generateFixed(20, 5, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
 
 		return {
 			scale: scale,
-			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, weeks.first),
-			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, weeks.second),
-			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, weeks.third)
+			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, graphValues4, weeks.first),
+			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, graphValues5, weeks.second),
+			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, graphValues6, weeks.third)
 		};
 	}
 
-	private static getWeek(row: Row, config: GraphConfiguration, graphValues: number[], week: DataWeek): DataWeeklyTrend
+	private static getWeek(row: Row, config: GraphConfiguration, avgValues: number[], rawValues: number[], week: DataWeek): DataWeeklyTrend
 	{
 		const previous = this.getValue(row, week.from);
 		const current = this.getValue(row, week.to);
-		const graphPoints = GraphGenerator.generate(config, graphValues);
-		const path = SvgPathGenerator.generate(graphPoints);
+
+		const avgPoints = GraphGenerator.generate(config, avgValues);
+		const avgPath = SvgPathGenerator.generate(avgPoints);
+		const rawPoints = GraphGenerator.generate(config, rawValues);
+		const rawPath = SvgPathGenerator.generate(rawPoints);
+
 		const value = current;
 
 		return {
-			graph: path,
-			lastGraphValue: graphPoints[graphPoints.length - 1].y,
+			graph: avgPath,
+			rawGraph: rawPath,
+			lastGraphValue: avgPoints[avgPoints.length - 1].y,
 			up: current > previous,
 			valueFormatted: FORMAT(value),
 			value,

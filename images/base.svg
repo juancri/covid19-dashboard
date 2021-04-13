@@ -94,6 +94,11 @@
 	.st41{fill:none;stroke:#E6E6E6;stroke-width:3.7658;stroke-miterlimit:10;}
 	.st42{fill:none;stroke:#CCCCCC;stroke-width:3.7658;stroke-miterlimit:10;}
 	.st43{fill:none;stroke:#4D4D4D;stroke-width:3.7658;stroke-miterlimit:10;}
+
+
+	.softGraph{fill:none;stroke:#D6D6D6;stroke-width:3.7658;stroke-miterlimit:10;}
+	.hardGraph{fill:none;stroke:#3D3D3D;stroke-width:3.7658;stroke-miterlimit:10;}
+
 	.st44{fill:none;stroke:#666666;stroke-width:3.7658;stroke-miterlimit:10;}
 	.rotateLeft {
 		transform-box: fill-box;
@@ -151,7 +156,7 @@
 <text
    transform="matrix(1 0 0 1 77.7245 1952.2494)"
    class="st6 st7 st8"
-   id="text18">Gráficos de las últimas 3 semanas, media móvil de 7 días.</text>
+   id="text18">Gráficos de las últimas 3 semanas, valor diario y media móvil de 7 días</text>
 <path
    class="st1"
    d="M1929.4,1048.3h-878.8c-10.5,0-19-8.5-19-19V232.6c0-10.5,8.5-19,19-19h878.8c10.5,0,19,8.5,19,19v796.7  C1948.4,1039.8,1939.9,1048.3,1929.4,1048.3z"
@@ -846,17 +851,23 @@
    class="st6 st7 st15"
    id="text352">{{ weeks.third.toFormatted }}</text>
 <path
-   class="st41"
-   d="{{{ positivity.week1.graph }}}"
-   id="path354" />
+   class="softGraph"
+   d="{{{ positivity.week1.rawGraph }}}" />
 <path
-   class="st42"
-   d="{{{ positivity.week2.graph }}}"
-   id="path356" />
+   class="softGraph"
+   d="{{{ positivity.week2.rawGraph }}}" />
 <path
-   class="st43"
-   d="{{{ positivity.week3.graph }}}"
-   id="path358" />
+   class="softGraph"
+   d="{{{ positivity.week3.rawGraph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ positivity.week1.graph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ positivity.week2.graph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ positivity.week3.graph }}}" />
 <circle
    class="st36"
    cx="1823.4"
@@ -906,17 +917,23 @@
    id="text382">{{ header.date.dayOfMonthFormatted }}</text>
 </g>
 <path
-   class="st41"
-   d="{{{ newCases.week1.graph }}}"
-   id="path386" />
+   class="softGraph"
+   d="{{{ newCases.week1.rawGraph }}}" />
 <path
-   class="st42"
-   d="{{{ newCases.week2.graph }}}"
-   id="path388" />
+   class="softGraph"
+   d="{{{ newCases.week2.rawGraph }}}" />
 <path
-   class="st43"
-   d="{{{ newCases.week3.graph }}}"
-   id="path390" />
+   class="softGraph"
+   d="{{{ newCases.week3.rawGraph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ newCases.week1.graph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ newCases.week2.graph }}}" />
+<path
+   class="hardGraph"
+   d="{{{ newCases.week3.graph }}}" />
 <circle
    class="st6"
    cx="142.6"
@@ -1159,13 +1176,22 @@
    id="circle478" />
 
 <path
-   class="st41"
+   class="softGraph"
+   d="{{{ deaths.week1.rawGraph }}}" />
+<path
+   class="softGraph"
+   d="{{{ deaths.week2.rawGraph }}}" />
+<path
+   class="softGraph"
+   d="{{{ deaths.week3.rawGraph }}}" />
+<path
+   class="hardGraph"
    d="{{{ deaths.week1.graph }}}" />
 <path
-   class="st42"
+   class="hardGraph"
    d="{{{ deaths.week2.graph }}}" />
 <path
-   class="st43"
+   class="hardGraph"
    d="{{{ deaths.week3.graph }}}" />
 
 
