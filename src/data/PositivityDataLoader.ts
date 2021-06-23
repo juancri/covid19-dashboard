@@ -44,9 +44,9 @@ export default class PositivityDataLoader
 	public static async load(weeks: DataWeeks): Promise<DataWeeklyTrends>
 	{
 		const rows = await CsvDownloader.get(URL);
-		const row = rows.find(r => r.Fecha === 'mediamovil_positividad');
+		const row = rows.find(r => r.Fecha === 'mediamovil_positividad_pcr');
 		if (!row)
-			throw new Error('Cannot find row: mediamovil_positividad');
+			throw new Error('Cannot find row: mediamovil_positividad_pcr');
 		const rowAvg7 = this.getAvg7(row);
 		const graphValues1 = Array.from(this.getGraphValues(rowAvg7, weeks.first));
 		const graphValues2 = Array.from(this.getGraphValues(rowAvg7, weeks.second));
