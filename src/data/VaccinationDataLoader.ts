@@ -26,7 +26,6 @@ export default class VaccinationDataLoader
 		let total = 0;
 		for (const url of urls)
 			total += await this.getQuantity(url);
-		console.log({ total });
 		const ratio = total / POPULATION;
 		return {
 			percent: Math.round(ratio * 100),
