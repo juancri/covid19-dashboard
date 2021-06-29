@@ -14,9 +14,9 @@ export default class VaccinationDataLoader
 	public static async load(): Promise<DataVaccination>
 	{
 		const rows = await CsvDownloader.get(URL);
-		const first = this.getData(rows, 'Primera');
-		const second = this.getData(rows, 'Segunda');
-		return { first, second };
+		const partial = this.getData(rows, 'Primera');
+		const completed = this.getData(rows, 'Segunda');
+		return { partial, completed };
 	}
 
 	private static getData(rows: Row[], doseName: string): DataVaccinationDose
