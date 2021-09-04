@@ -49,7 +49,9 @@ export default class NewCasesDataLoader
 		const graphValues5 = Array.from(this.getGraphValues(rowDiff, weeks.second));
 		const graphValues6 = Array.from(this.getGraphValues(rowDiff, weeks.third));
 		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3, ...graphValues4, ...graphValues5, ...graphValues6 ];
-		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => Math.floor(x / 1000) + 'k');
+		const scale = ScaleGenerator.generate(
+			allValues, BOX_3.right, BOX_3.bottom, BOX_3.top,
+			x => NewCasesDataLoader.generateLabel(x));
 
 		return {
 			scale: scale,
@@ -151,5 +153,12 @@ export default class NewCasesDataLoader
 	{
 		for (let current = week.from; +current <= +week.to; current = current.plus({ days: 1 }))
 			yield this.getValue(row, current);
+	}
+
+	private static generateLabel(value: number): string
+	{
+		return value >= 1_000 ?
+			Math.floor(value / 1000) + 'k' :
+			value.toString();
 	}
 }
