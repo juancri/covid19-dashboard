@@ -5,6 +5,7 @@ import DataWriter from "./data/DataWriter";
 import TemplateManager from "./template/TemplateManager";
 
 const DATE_OPTIONS = { zone: 'utc' };
+const TODAY = DateTime.local().startOf('day');
 
 (async() =>
 {
@@ -13,7 +14,7 @@ const DATE_OPTIONS = { zone: 'utc' };
 		const inputDate = process.argv[2];
 		const today = inputDate ?
 			DateTime.fromISO(inputDate, DATE_OPTIONS) :
-			DateTime.utc().startOf('day');
+			TODAY;
 		const data = await DataLoader.loadTree(today);
 		DataWriter.write(data);
 		const svgPath = TemplateManager.write(data);
