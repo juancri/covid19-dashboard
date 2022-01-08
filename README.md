@@ -11,3 +11,8 @@ npm install
 make
 ```
 
+## Run
+
+```
+node dist/main
+```
