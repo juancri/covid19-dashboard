@@ -63,8 +63,8 @@ export interface DataVaccinationDose
 
 export interface DataVaccination
 {
-	partial: DataVaccinationDose;
-	completed: DataVaccinationDose;
+	complete: DataVaccinationDose;
+	booster: DataVaccinationDose;
 }
 
 export interface DataTree
