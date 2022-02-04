@@ -5,7 +5,7 @@ import formatNumber from 'format-number';
 
 import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
-import { Box, DataWeek, DataWeeklyTrend, DataWeeklyTrends, DataWeeks, GraphConfiguration, Row } from "../Types";
+import { Box, DataWeek, DataWeeklyTrend, DataWeeks, GraphConfiguration, PositivityWeeklyTrends, Row } from "../Types";
 import CsvDownloader from "../util/CsvDownloader";
 import ScaleGenerator from '../util/ScaleGenerator';
 
@@ -18,30 +18,31 @@ const FORMAT = formatNumber({
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://github.com/MinCiencia/Datos-COVID19/raw/master/output/producto49/Positividad_Diaria_Media.csv';
+const BOX_BASE = {
+	top: 1_270,
+	bottom: 1_754
+};
 const BOX_1: Box = {
+	...BOX_BASE,
 	left: 1_117.2,
-	right: 1_352.6,
-	top: 1266.3,
-	bottom: 1754.2
+	right: 1_352.6
 };
 const BOX_2: Box = {
+	...BOX_BASE,
 	left: 1_352.6,
-	right: 1_587,
-	top: 1266.3,
-	bottom: 1754.2
+	right: 1_587
 };
 const BOX_3: Box = {
+	...BOX_BASE,
 	left: 1_587,
-	right: 1_816.4,
-	top: 1266.3,
-	bottom: 1754.2
+	right: 1_816.4
 };
 
 
 export default class PositivityDataLoader
 {
 
-	public static async load(weeks: DataWeeks): Promise<DataWeeklyTrends>
+	public static async load(weeks: DataWeeks): Promise<PositivityWeeklyTrends>
 	{
 		const rows = await CsvDownloader.get(URL);
 		const row = rows.find(r => r.Fecha === 'mediamovil_positividad_pcr');
@@ -54,13 +55,16 @@ export default class PositivityDataLoader
 		const graphValues4 = Array.from(this.getGraphValues(row, weeks.first));
 		const graphValues5 = Array.from(this.getGraphValues(row, weeks.second));
 		const graphValues6 = Array.from(this.getGraphValues(row, weeks.third));
-		const scale = ScaleGenerator.generateFixed(20, 5, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
+		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3, ...graphValues4, ...graphValues5, ...graphValues6 ];
+		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
+		// ScaleGenerator.generateFixed(20, 5, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
 
 		return {
 			scale: scale,
 			week1: this.getWeek(row, { scale, box: BOX_1 }, graphValues1, graphValues4, weeks.first),
 			week2: this.getWeek(row, { scale, box: BOX_2 }, graphValues2, graphValues5, weeks.second),
-			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, graphValues6, weeks.third)
+			week3: this.getWeek(row, { scale, box: BOX_3 }, graphValues3, graphValues6, weeks.third),
+			rule10Position: GraphGenerator.generateY({ scale, box: BOX_1 }, 10)
 		};
 	}
 

@@ -47,6 +47,11 @@ export interface DataWeeklyTrends
 	week3: DataWeeklyTrend;
 }
 
+export interface PositivityWeeklyTrends extends DataWeeklyTrends
+{
+	rule10Position: number;
+}
+
 export interface DataBeds
 {
 	available: number;

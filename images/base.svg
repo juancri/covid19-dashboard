@@ -615,7 +615,8 @@
    class="st32 st7 st8"
    id="text278"
    x="1137.0193"
-   y="1495.0547">Máximo recomendado OMS (10%)</text>
+   y="{{{ positivity.rule10Position }}}"
+   transform="translate(0, -15)">Máximo recomendado OMS (10%)</text>
 <g
    id="g288">
 	<g
@@ -694,9 +695,10 @@
 <line
    class="st34"
    x1="1823.5"
-   y1="1519.8"
+   y1="{{{ positivity.rule10Position }}}"
    x2="1118.7"
-   y2="1519.8"
+   y2="{{{ positivity.rule10Position }}}"
+   transform="translate(0, 5)"
    id="line306" />
 <g>
    <text

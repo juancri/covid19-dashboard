@@ -16,6 +16,13 @@ export default class GraphGenerator
 		return scaledPoints;
 	}
 
+	public static generateY(config: GraphConfiguration, y: number): number
+	{
+		const ratioY = this.getRatio(config.scale.min, config.scale.max, y);
+		const scaledValue = this.scaleValue(config.box.bottom, config.box.top, ratioY);
+		return scaledValue;
+	}
+
 	private static generateRawPoints(values: number[]): Point[]
 	{
 		return values.map((value, index) => ({ x: index, y: value }));
