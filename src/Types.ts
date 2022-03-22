@@ -113,3 +113,5 @@ export interface GraphConfiguration {
 	box: Box;
 	scale: Scale;
 }
+
+export type Operation = (operator1: number, operator2: number) => number;
