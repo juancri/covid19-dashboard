@@ -8,12 +8,16 @@ import GraphGenerator from "../drawing/GraphGenerator";
 import SvgPathGenerator from "../drawing/SvgPathGenerator";
 import CsvDownloader from "../util/CsvDownloader";
 import ScaleGenerator from '../util/ScaleGenerator';
+import RowOperations from '../util/RowOperations';
 
 const FORMAT = formatNumber({ integerSeparator: '.' });
 const DATE_FORMAT = 'yyyy-MM-dd';
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const DATE_OPTIONS = { zone: 'UTC' };
 const URL = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto5/TotalesNacionales.csv';
+const FALLECIDOS = 'Fallecidos';
+const SOSPECHOSOS = 'Fallecidos sospechosos probables u otros totales';
+const FECHA = 'Fecha';
 const BOX_1: Box = {
 	left: 144.5,
 	right: 380.5,
@@ -37,10 +41,17 @@ export default class DeathsDataLoader
 {
 	public static async load(weeks: DataWeeks): Promise<DataWeeklyTrends>
 	{
+		// Get data
 		const rows = await CsvDownloader.get(URL);
-		const row = rows.find(r => r.Fecha === 'Fallecidos');
-		if (!row)
+		const fallecidos = rows.find(r => r[FECHA] === FALLECIDOS);
+		if (!fallecidos)
 			throw new Error('Cannot find row for Fallecidos');
+		const sospechosos = rows.find(r => r[FECHA] === SOSPECHOSOS);
+		if (!sospechosos)
+			throw new Error('Cannot find row for Sospechosos');
+
+		// Rest sospechosos from fallecidos
+		const row = RowOperations.minus(fallecidos, sospechosos, FECHA);
 		const rowDiff = this.getDiffValues(row);
 		const rowAvg7 = this.getAvg7(rowDiff);
 
