@@ -1,8 +1,11 @@
 
+// Dependencies
 import Enumerable from 'linq';
 
+// Local
 import { Circle, Scale } from "../Types";
 
+// Types
 type FormatNumber = (x: number) => string;
 
 interface ScaleDefinition
@@ -13,10 +16,11 @@ interface ScaleDefinition
 
 export default class ScaleGenerator
 {
-	public static generate(values: number[], x: number, minY: number, maxY: number, format: FormatNumber): Scale
+	public static generate(values: number[], x: number, minY: number, maxY: number, format: FormatNumber, minMax?: number): Scale
 	{
 		const min = 0;
-		const scaleDef = this.getScaleDef(values);
+		const max = this.getMaxValue(values, minMax);
+		const scaleDef = this.generateScaleDefinition(max);
 		const circles = Array.from(this.getCircles(scaleDef, x, minY, maxY, format));
 		return { min, max: scaleDef.max, circles };
 	}
@@ -43,15 +47,22 @@ export default class ScaleGenerator
 		}
 	}
 
-	private static getScaleDef(values: number[]): ScaleDefinition
+	private static getMaxValue(values: number[], minMax?: number): number
 	{
-		const maxValue = Enumerable
+		if (minMax !== undefined)
+			return minMax;
+
+		return Enumerable
 			.from(values)
 			.where(v => !!v)
 			.max();
+	}
+
+	private static generateScaleDefinition(maxValue: number): ScaleDefinition
+	{
 		const length = Math.log10(maxValue);
 		const basePow = Math.floor(length);
-		const baseStep = Math.pow(10, basePow);
+		const baseStep = Math.pow(10, length === basePow ? basePow - 1 : basePow);
 		const ratio = maxValue / baseStep;
 		const maxSteps = Math.ceil(ratio);
 		const max = maxSteps * baseStep;

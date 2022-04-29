@@ -37,7 +37,7 @@ const BOX_3: Box = {
 	left: 1_587,
 	right: 1_816.4
 };
-
+const MIN_MAX = 10;
 
 export default class PositivityDataLoader
 {
@@ -56,8 +56,7 @@ export default class PositivityDataLoader
 		const graphValues5 = Array.from(this.getGraphValues(row, weeks.second));
 		const graphValues6 = Array.from(this.getGraphValues(row, weeks.third));
 		const allValues = [ ...graphValues1, ...graphValues2, ...graphValues3, ...graphValues4, ...graphValues5, ...graphValues6 ];
-		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
-		// ScaleGenerator.generateFixed(20, 5, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`);
+		const scale = ScaleGenerator.generate(allValues, BOX_3.right, BOX_3.bottom, BOX_3.top, x => `${x}%`, MIN_MAX);
 
 		return {
 			scale: scale,
