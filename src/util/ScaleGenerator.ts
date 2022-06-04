@@ -49,13 +49,13 @@ export default class ScaleGenerator
 
 	private static getMaxValue(values: number[], minMax?: number): number
 	{
-		if (minMax !== undefined)
-			return minMax;
-
-		return Enumerable
+		const found = Enumerable
 			.from(values)
 			.where(v => !!v)
 			.max();
+		return minMax === undefined ?
+			found :
+			Math.max(found, minMax);
 	}
 
 	private static generateScaleDefinition(maxValue: number): ScaleDefinition
