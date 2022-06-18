@@ -7,18 +7,17 @@ import CsvDownloader from "../util/CsvDownloader";
 
 const POPULATION = 19_276_267;
 const ISO_DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
-const URL_UNICA = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto78/vacunados_edad_fecha_UnicaDosis.csv';
-const URL_SEGUNDA = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto78/vacunados_edad_fecha_2daDosis.csv';
 const URL_BOOSTER = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto78/vacunados_edad_fecha_Refuerzo.csv';
+const URL_FOURTH = 'https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto78/vacunados_edad_fecha_Cuarta.csv';
 const FORMAT = formatNumber({ integerSeparator: '.' });
 
 export default class VaccinationDataLoader
 {
 	public static async load(): Promise<DataVaccination>
 	{
-		const complete = await this.getData(URL_UNICA, URL_SEGUNDA);
 		const booster = await this.getData(URL_BOOSTER);
-		return { complete, booster };
+		const fourth = await this.getData(URL_FOURTH);
+		return { booster, fourth };
 	}
 
 	private static async getData(...urls: string[]): Promise<DataVaccinationDose>

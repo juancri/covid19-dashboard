@@ -421,14 +421,14 @@
 <text
    transform="matrix(1 0 0 1 1098.811 892.0595)"
    class="st21 st7 st23"
-   id="text120">refuerzo</text>
+   id="text120">cuarta</text>
 <text
    transform="matrix(1 0 0 1 1350.811 958.0595)"
    id="text126"><tspan
      x="0"
      y="0"
      class="st21 st4 st24"
-     id="tspan122">{{ vaccination.booster.quantity }}</tspan><tspan
+     id="tspan122">{{ vaccination.fourth.quantity }}</tspan><tspan
      x="0"
      y="35"
      class="st21 st7 st24"
@@ -455,19 +455,19 @@
 	<text
    transform="matrix(1 0 0 1 1094.7666 992.5171)"
    class="st28 st17 st29"
-   id="text134">{{ vaccination.booster.percent }}%</text>
+   id="text134">{{ vaccination.fourth.percent }}%</text>
 </g>
 <text
    transform="matrix(1 0 0 1 1516.8109 892.0595)"
    class="st21 st7 st23"
-   id="text138">completa</text>
+   id="text138">refuerzo</text>
 <text
    transform="matrix(1 0 0 1 1768.8109 958.0595)"
    id="text144"><tspan
      x="0"
      y="0"
      class="st21 st4 st24"
-     id="tspan140">{{ vaccination.complete.quantity }}</tspan><tspan
+     id="tspan140">{{ vaccination.booster.quantity }}</tspan><tspan
      x="0"
      y="35"
      class="st21 st7 st24"
@@ -477,7 +477,7 @@
 	<text
    transform="matrix(1 0 0 1 1512.7666 992.5171)"
    class="st30 st17 st29"
-   id="text146">{{ vaccination.complete.percent }}%</text>
+   id="text146">{{ vaccination.booster.percent }}%</text>
 </g>
 <text
    transform="matrix(1 0 0 1 1091.7554 504.0402)"
@@ -515,14 +515,14 @@
    x="1332"
    y="728.9"
    class="st30"
-   width="{{{ vaccination.complete.size }}}"
+   width="{{{ vaccination.booster.size }}}"
    height="81.1"
    id="rect162" />
 	<rect
    x="1332"
    y="728.9"
    class="st28"
-   width="{{{ vaccination.booster.size }}}"
+   width="{{{ vaccination.fourth.size }}}"
    height="81.1"
    id="rect164" />
 	<path
