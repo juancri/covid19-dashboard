@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 
 import { Row } from '../Types';
 
