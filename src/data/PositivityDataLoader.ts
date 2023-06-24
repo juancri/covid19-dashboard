@@ -114,12 +114,12 @@ export default class PositivityDataLoader
 	{
 		const date = DateTime.fromISO(dateString, DATE_OPTIONS);
 		for (let days = -6; days <= 0; days++)
-			yield date.plus({ days }).toISODate();
+			yield date.plus({ days }).toISODate() ?? '';
 	}
 
 	private static getValue(row: Row, date: DateTime): number
 	{
-		const num = this.getNumber(row[date.toISODate()]);
+		const num = this.getNumber(row[date.toISODate() ?? '']);
 		return num * 100;
 	}
 

@@ -150,7 +150,7 @@ export default class DeathsDataLoader
 	{
 		const date = DateTime.fromISO(dateString, DATE_OPTIONS);
 		for (let days = -6; days <= 0; days++)
-			yield date.plus({ days }).toISODate();
+			yield date.plus({ days }).toISODate() ?? '';
 	}
 
 	private static getValue(row: Row, date: DateTime): number
