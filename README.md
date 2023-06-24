@@ -1,7 +1,7 @@
 
 ## Requirements
 
-- Node 16.x
+- Node 18.x
 - GNU Make
 
 ## Setup
